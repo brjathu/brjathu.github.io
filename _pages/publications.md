@@ -9,6 +9,13 @@ author_profile: true
 ## Publications
 
 
+
+<b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
+<b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>
+<i>International World Wide Web Conferences.</i> <b>WWW 2019</b>.
+
+
+
 <b>[TextCaps : Handwritten Character Recognition with
 Very Small Datasets.]()</b><br>
 V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
