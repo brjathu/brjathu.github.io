@@ -7,9 +7,9 @@ main:
 
   
   - title: "cv"
-      url: /cv/
+    url: /cv/
 
-- title: "awards & Honors"
+  - title: "awards & Honors"
     url: /awards/
 
   # - title: "Talks"
