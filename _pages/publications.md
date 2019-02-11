@@ -9,13 +9,18 @@ author_profile: true
 ## Publications
 
 
+<b>[TextCaps : Handwritten Character Recognition with
+Very Small Datasets.]()</b><br>
+V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
+<i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>.
 
 
 
 <b>[Performance of Deep Learning Models for Breathing-based Authentication on Resource-Constrained Devices. Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies.](https://dl.acm.org/citation.cfm?id=3287036)</b><br>
 J. Chauhan, <b>J. Rajasegaran</b>, S. Seneviratne, A. Misra, A. Seneviratne,
 Youngki Lee.<br>
-<i>International Conference on Digital Image Computing: Techniques and Applications</i> <b>DICTA 2017</b>.
+<i>Proceedings of the
+ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies</i> <b>IMWUT</b>.
 
 
 
