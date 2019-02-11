@@ -18,7 +18,9 @@ redirect_from:
 
 
 # Recent News
-* November 3, 2018. One [paper](http://lantaoyu.com/publications/RLSGAAAI19) accepted to AAAI 2019.
+* February 7, 2019. Started working as Research Engineer at School of Information Systems, Singapore Management University.
+* January 25, 2019. Finished my final viva at University of Moratuwa.
+<!-- * November 3, 2018. One [paper](http://lantaoyu.com/publications/RLSGAAAI19) accepted to AAAI 2019.
 * July 17, 2018. I will serve as a PC member for the 33rd AAAI Conference on Artificial Intelligence (AAAI-19).
 * April 12, 2018. New preprint: "CoT: Cooperative Training for Generative Modeling", a new paradigm for training tractable density generative model that is parallel to adversarial training. Available on [arXiv](https://arxiv.org/abs/1804.03782).
 * November 28, 2017. A paper was accepted in the *NIPS-17 Aligned Artificial Intelligence Workshop*.
@@ -33,3 +35,4 @@ redirect_from:
 * April 11, 2017. A paper titled "IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models" was accepted at [SIGIR 2017](http://sigir.org/sigir2017/).
 * February 4 - February 9, 2017. I attended the Thirty-First AAAI Conference on Artificial Intelligence held in San Francisco, California, US and gave a [talk](http://lantaoyu.com/files/2017-02-07-aaai-seqgan.pdf) on applying adversarial training for generating sequential data.
 * November 11, 2016. A paper titled "SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient" was accepted at [AAAI 2017](http://www.aaai.org/Conferences/AAAI/aaai17.php).
+ -->
