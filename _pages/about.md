@@ -12,10 +12,11 @@ redirect_from:
   <img src="https://brjathu.github.io/files/me2.jpg?raw=true" alt="Photo" style="width: 450px;"/> 
 </p>
 
-
+* I received my Bachelor’s Degree in [University of Moratuwa](https://www.mrt.ac.lk/web/). My undergraduate research advisor was [Dr. Ranga Rodrigo](http://www.ent.mrt.ac.lk/~ranga/).
 * My research interests lie in the general area of deep learning, particularly in deep neural architecture for image classification. I am also interested in statistical machine learning, especially in spectral learning of latent variable models.
 
 
 # Recent News
 * February 7, 2019. Started working as Research Engineer at School of Information Systems, Singapore Management University.
 * January 25, 2019. Finished my final viva at University of Moratuwa.
+* January 21, 2019. One [paper](https://arxiv.org/abs/1804.09882) accepted to WWW2019.
