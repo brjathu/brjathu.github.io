@@ -1,10 +1,10 @@
 ---
-title: "Publications [(Google Scholar Profile)](https://scholar.google.com/citations?user=Ixg9n-EAAAAJ&hl=en)"
+title: "Publications [(Google Scholar Profile)](https://scholar.google.com/citations?hl=en&user=Ctp3igcAAAAJ)"
 permalink: /publications/
 author_profile: true
 ---
 
-## Deep Learning
+## Preprints
 
 <b>[CoT: Cooperative Training for Generative Modeling of Discrete Data](http://lantaoyu.com/publications/CoT)</b> <br>
 Sidi Lu, <b>Lantao Yu</b>, Siyuan Feng, Yaoming Zhu, Weinan Zhang, Yong Yu.<br>
@@ -26,11 +26,11 @@ Jun Wang, <b>Lantao Yu</b>, Weinan Zhang, Yu Gong, Yinghui Xu, Benyou Wang, Peng
 <b>Lantao Yu\*</b>, Xuejian Wang\*, Kan Ren, Guanyu Tao, Weinan Zhang, Yong Yu, Jun Wang.<br>
 <i>The 23rd SIGKDD Conference on Knowledge Discovery and Data Mining.</i> <b>KDD 2017</b>.
 
-## Multi-Agent Systems & Computational Sustainability
+## Publications
 
-<b>[Deep Reinforcement Learning for Green Security Games with Real-Time Information](http://lantaoyu.com/publications/RLSGAAAI19)</b><br>
-Yufei Wang, Zheyuan Ryan Shi, <b>Lantao Yu</b>, Yi Wu, Rohit Singh, Lucas Joppa, Fei Fang.<br>
-<i>The Thirty-Third AAAI Conference on Artificial Intelligence.</i> <b>AAAI 2019</b>.
+<b>[Combined Static and Motion Features for Deep-Networks Based Activity Recognition in Videos.](https://ieeexplore.ieee.org/document/8060555)</b><br>
+S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo, A. A. Pasqual.<br>
+<i>IEEE Transactions on Circuits and Systems for Video Technology.</i> <b>TCSVT</b>.
 
 <b>[A Study of AI Population Dynamics with Million-agent Reinforcement Learning](http://lantaoyu.com/publications/MA)</b><br>
 <b>Lantao Yu\*</b>, Yaodong Yang\*, Yiwei Bai\*, Jun Wang, Weinan Zhang, Ying Wen, Yong Yu.<br>
