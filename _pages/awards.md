@@ -6,7 +6,7 @@ author_profile: true
 ---
 * **IEEE Myron Zucker Design Contest 2017** First place for designing a digital irrigation system for farmers.
 <p align="center">
-  <img src="https://brjathu.github.io/files/me2.jpg?raw=true" alt="Photo" style="width: 450px;"/>
+  <img src="https://brjathu.github.io/images/ias.jpge" alt="Photo" style="width: 450px;"/> 
 </p>
 <!-- * **Best Paper Award Honorable Mention of SIGIR 2017 ([Link](http://sigir.org/sigir2017/program/awards/))**. August 9, Tokyo, Japan. 2017.
 * **Microsoft Azure Research Award**, Carnegie Mellon University. 2017.

@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 <p align="center">
-  <img src="https://brjathu.github.io/files/me2.jpg" alt="Photo" style="width: 450px;"/> 
+  <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
 </p>
 
 * I received my Bachelor’s Degree in [University of Moratuwa](https://www.mrt.ac.lk/web/). I did my thesis with [Dr. Ranga Rodrigo](http://www.ent.mrt.ac.lk/~ranga/) on capsule networks.
