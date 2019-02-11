@@ -4,7 +4,7 @@ title: "Awards & Honors"
 permalink: /awards/
 author_profile: true
 ---
-* **IEEE Myron Zucker Design Contest 2017** First place for designing a digital irrigation system for farmers.
+* **IEEE Myron Zucker Design Contest 2017** First place for designing a digital irrigation system for farmers. Awarding ceremony was held in Cincinnati, Ohio, USA.
 <p align="center">
   <img src="https://brjathu.github.io/images/ias.jpeg" alt="Photo" style="width: 450px;"/> 
 </p>
