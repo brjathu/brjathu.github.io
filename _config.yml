@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Jathushan Rajasegaran"
 title_separator          : "-"
 name                     : &name "Jathushan Rajasegaran"
-description              : &description "I am an Electronic and Telecommunication engineering graduate from the University of Moratuwa. Currently working at SMU as Research Engineer."
+description              : &description ""
 url                      : https://brjathu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Jathushan Rajasegaran"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  bio              : "I am an Electronic and Telecommunication engineering graduate from the University of Moratuwa. Currently working at SMU as Research Engineer."
+  location         : "Singapore"
   employer         :
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  googlescholar    : "https://scholar.google.com.au/citations?user=Ctp3igcAAAAJ&hl=en"
+  email            :  
+  researchgate     :  "https://www.researchgate.net/profile/Jathushan_Rajasegaran"
   uri              :
   bitbucket        :
   codepen          :
