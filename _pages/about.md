@@ -12,7 +12,8 @@ redirect_from:
   <img src="https://brjathu.github.io/files/me2.jpg?raw=true" alt="Photo" style="width: 450px;"/> 
 </p>
 
-* I received my Bachelor’s Degree in [University of Moratuwa](https://www.mrt.ac.lk/web/). My undergraduate research advisor was [Dr. Ranga Rodrigo](http://www.ent.mrt.ac.lk/~ranga/).
+* I received my Bachelor’s Degree in [University of Moratuwa](https://www.mrt.ac.lk/web/). I did my thesis with [Dr. Ranga Rodrigo](http://www.ent.mrt.ac.lk/~ranga/) on capsule networks.
+* I did my internship at DATA61, CSIRO. My supervisors during the internship are [Dr. Suranga Seneviratne](https://sydney.edu.au/engineering/people/suranga.seneviratne.php), [Dr. Thierry Rakotoarivelo](https://research.csiro.au/ng/about-us/people/thierry-rakotoarivelo/) and [Dr. Hassan Asghar](https://research.csiro.au/ng/about-us/people/hassan-asghar/).
 * My research interests lie in the general area of deep learning, particularly in deep neural architecture for image classification. I am also interested in statistical machine learning, especially in spectral learning of latent variable models.
 
 
