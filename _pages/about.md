@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="https://brjathu.github.io/images/favicon.ico">
 
 <p align="center">
   <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
