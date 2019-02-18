@@ -8,6 +8,9 @@ redirect_from:
   - /about.html
 ---
 
+
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+
 <p align="center">
   <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
 </p>
