@@ -1,19 +1,13 @@
 ---
-title: "Publications [(Google Scholar Profile)](https://scholar.google.com/citations?hl=en&user=Ctp3igcAAAAJ)"
-permalink: /publications/
+title: "miscellaneous"
+permalink: /miscellaneous/
 author_profile: true
 ---
 
-<!-- ## Preprints
-
-<b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
-<b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>
-<i>International World Wide Web Conferences.</i> <b>WWW 2019</b>.
+I am from Sri Lanka. I was born in Inuvil and spent my most of the childhood in Kokuvil and Kalviyamkadu, in Jaffna. Then I moved to moratuwa for my undergraduate studies, down south in Sri Lanka's capital. Nothing compares to life and weather back home. Here's a nice video about Sri Lanka. [Beautiful Sri Lanka](https://www.youtube.com/watch?v=3mkxB4L0C5w)
 
 
- -->
-
-## Publications
+## Photography
 
 
 <b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
