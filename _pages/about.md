@@ -29,6 +29,6 @@ redirect_from:
 
 
 # Recent News
-* February 25, 2019. Deep Capsule Network paper got accepted at CVPR'2019. 
+* February 25, 2019. Deep Capsule Network paper got accepted at CVPR'2019 for oral presentation. 
 * January 25, 2019. Finished my final viva at University of Moratuwa.
 * January 21, 2019. One [paper](https://arxiv.org/abs/1804.09882) accepted to WWW2019.
