@@ -14,3 +14,6 @@ At Moratuwa, I worked with Ranga Rodrigo on Vision, ML and related areas. Here a
 
 ## Photography
 
+<p align="center">
+  <img src="https://brjathu.github.io/images/photography/1.jpg" alt="Photo" style="width: 450px;"/> 
+</p>
