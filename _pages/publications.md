@@ -15,6 +15,11 @@ author_profile: true
 
 ## Publications
 
+<b>[DeepCaps : Going Deeper with Capsule Networks.]()</b><br>
+<b>J. Rajasegaran</b>, V. Jayasundara, S.Jeyasekara, N. Jeyasekara, S. Seneviratne, R. Rodrigo.<br>
+<i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>.
+
+
 
 <b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
 <b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>
