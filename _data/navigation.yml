@@ -25,7 +25,10 @@ main:
   #   url: /year-archive/
     
   - title: "misc."
-    url: /miscellaneous/  
+    url: /miscellaneous/ 
+
+  - title: "photography"
+    url: /photography/  
     
   # - title: "Guide"
     # url: /markdown/
