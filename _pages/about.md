@@ -23,9 +23,9 @@ redirect_from:
   <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
 </p>
 
-* Computer vision is "fighting human brain which has 100 billion neurons with few hundreds of million neurons in GPUs".
+* Computer vision is A Fight between human brain with 100 billion neurons and GPUs with few hundreds of million.
 * I received my Bachelor’s Degree in [University of Moratuwa](https://www.mrt.ac.lk/web/). I did my thesis with [Dr. Ranga Rodrigo](http://www.ent.mrt.ac.lk/~ranga/) on capsule networks.
-* I did my internship at DATA61, CSIRO with the supervision under internship are [Dr. Suranga Seneviratne](https://sydney.edu.au/engineering/people/suranga.seneviratne.php), [Dr. Thierry Rakotoarivelo](https://research.csiro.au/ng/about-us/people/thierry-rakotoarivelo/) and [Dr. Hassan Asghar](https://research.csiro.au/ng/about-us/people/hassan-asghar/).
+* I did my internship at DATA61, CSIRO with the supervision of [Dr. Suranga Seneviratne](https://sydney.edu.au/engineering/people/suranga.seneviratne.php), [Dr. Thierry Rakotoarivelo](https://research.csiro.au/ng/about-us/people/thierry-rakotoarivelo/) and [Dr. Hassan Asghar](https://research.csiro.au/ng/about-us/people/hassan-asghar/).
 * My research interests lie in the general area of deep learning, particularly in deep neural architecture for image classification. I am also interested in statistical machine learning, especially in spectral learning of latent variable models.
 
 
