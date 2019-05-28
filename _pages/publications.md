@@ -4,31 +4,24 @@ permalink: /publications/
 author_profile: true
 ---
 
-<!-- ## Preprints
 
-<b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
-<b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>
-<i>International World Wide Web Conferences.</i> <b>WWW 2019</b>.
-
-
- -->
 
 ## Publications
 
-<b>[DeepCaps : Going Deeper with Capsule Networks.]()</b><br>
+<b>[DeepCaps : Going Deeper with Capsule Networks.](https://arxiv.org/abs/1904.09546)</b><br>
 <b>J. Rajasegaran</b>, V. Jayasundara, S.Jeyasekara, N. Jeyasekara, S. Seneviratne, R. Rodrigo.<br>
 <i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>.
 
 
 
-<b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
-<b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>
+<b>[A Multi-modal Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
+<b>J. Rajasegaran</b>, N. Karunanayake, A. Gunathillake, S. Seneviratne, G. Jourjon.<br>
 <i>International World Wide Web Conferences.</i> <b>WWW 2019</b>.
 
 
 
 <b>[TextCaps : Handwritten Character Recognition with
-Very Small Datasets.]()</b><br>
+Very Small Datasets.](https://ieeexplore.ieee.org/abstract/document/8658735)</b><br>
 V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
 <i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>.
 
@@ -54,6 +47,10 @@ S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo,
 <i>IEEE Transactions on Circuits and Systems for Video Technology.</i> <b>TCSVT</b>.
 
 
+## Preprints
+
+<b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
+<b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>.
 
 
 
