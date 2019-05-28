@@ -23,13 +23,13 @@ redirect_from:
   <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
 </p>
 
-* Computer vision is a fight between human brain with 100 billion neurons and GPUs with few hundreds of million.
+* Computer vision is finding a balance between human brain with 100 billion neurons and GPUs with few hundreds of million.
 * I received my Bachelor’s Degree in [University of Moratuwa](https://www.mrt.ac.lk/web/). I did my thesis with [Dr. Ranga Rodrigo](http://www.ent.mrt.ac.lk/~ranga/) on capsule networks.
 * I did my internship at DATA61, CSIRO with the supervision of [Dr. Suranga Seneviratne](https://sydney.edu.au/engineering/people/suranga.seneviratne.php), [Dr. Thierry Rakotoarivelo](https://research.csiro.au/ng/about-us/people/thierry-rakotoarivelo/) and [Dr. Hassan Asghar](https://research.csiro.au/ng/about-us/people/hassan-asghar/).
 * My research interests lie in the general area of deep learning, particularly in deep neural architecture for image classification. I am also interested in statistical machine learning, especially in spectral learning of latent variable models.
 
 
 # Recent News
-* February 25, 2019. Deep Capsule Network paper got accepted at CVPR'2019 for oral presentation. 
+* February 25, 2019. Deep Capsule Network [paper](https://arxiv.org/abs/1904.09546) got accepted at CVPR'2019 for oral presentation. 
 * January 25, 2019. Finished my final viva at University of Moratuwa.
-* January 21, 2019. One [paper](https://arxiv.org/abs/1804.09882) accepted to WWW2019.
+* January 21, 2019. One [paper](https://dl.acm.org/citation.cfm?id=3313427) accepted to WWW2019.
