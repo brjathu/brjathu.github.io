@@ -14,7 +14,7 @@ author_profile: true
 
 
 
-<b>[A Multi-modal Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
+<b>[A Multi-modal Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.](https://dl.acm.org/citation.cfm?id=3313427)</b><br>
 <b>J. Rajasegaran</b>, N. Karunanayake, A. Gunathillake, S. Seneviratne, G. Jourjon.<br>
 <i>International World Wide Web Conferences.</i> <b>WWW 2019</b>.
 
