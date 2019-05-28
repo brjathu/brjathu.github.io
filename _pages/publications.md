@@ -11,6 +11,7 @@ author_profile: true
 <b>[DeepCaps : Going Deeper with Capsule Networks.](https://arxiv.org/abs/1904.09546)</b><br>
 <b>J. Rajasegaran</b>, V. Jayasundara, S.Jeyasekara, N. Jeyasekara, S. Seneviratne, R. Rodrigo.<br>
 <i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>.
+[[code]](https://github.com/brjathu/deepcaps)
 
 
 
@@ -24,7 +25,7 @@ author_profile: true
 Very Small Datasets.](https://ieeexplore.ieee.org/abstract/document/8658735)</b><br>
 V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
 <i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>.
-
+[[code]](https://github.com/vinojjayasundara/textcaps)
 
 
 <b>[Performance of Deep Learning Models for Breathing-based Authentication on Resource-Constrained Devices. Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies.](https://dl.acm.org/citation.cfm?id=3287036)</b><br>
