@@ -37,7 +37,7 @@ ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies</i> <b>IMWUT</b
 
 
 
-<b>[Micro Actions and Deep Static Features for Activity Recognition.](ieeexplore.ieee.org/document/8227463/)</b><br>
+<b>[Micro Actions and Deep Static Features for Activity Recognition.](https://ieeexplore.ieee.org/document/8227463/)</b><br>
 S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo, A. A. Pasqual.<br>
 <i>International Conference on Digital Image Computing: Techniques and Applications</i> <b>DICTA 2017</b>.
 
