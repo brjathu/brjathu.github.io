@@ -8,7 +8,7 @@ author_profile: true
 
 ## Publications
 
-<b>[DeepCaps : Going Deeper with Capsule Networks.](https://arxiv.org/abs/1904.09546)</b><br>
+<b>[DeepCaps : Going Deeper with Capsule Networks.](http://openaccess.thecvf.com/content_CVPR_2019/html/Rajasegaran_DeepCaps_Going_Deeper_With_Capsule_Networks_CVPR_2019_paper.html)</b><br>
 <b>J. Rajasegaran</b>, V. Jayasundara, S.Jeyasekara, N. Jeyasekara, S. Seneviratne, R. Rodrigo.<br>
 <i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>.
 [[code]](https://github.com/brjathu/deepcaps)
@@ -25,7 +25,7 @@ author_profile: true
 Very Small Datasets.](https://ieeexplore.ieee.org/abstract/document/8658735)</b><br>
 V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
 <i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>.
-[[code]](https://github.com/vinojjayasundara/textcaps)
+[[code]](https://github.com/brjathu/textcaps)
 
 
 <b>[Performance of Deep Learning Models for Breathing-based Authentication on Resource-Constrained Devices. Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies.](https://dl.acm.org/citation.cfm?id=3287036)</b><br>
@@ -37,7 +37,7 @@ ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies</i> <b>IMWUT</b
 
 
 
-<b>[ Micro Actions and Deep Static Features for Activity Recognition.](ieeexplore.ieee.org/document/8227463/)</b><br>
+<b>[Micro Actions and Deep Static Features for Activity Recognition.](ieeexplore.ieee.org/document/8227463/)</b><br>
 S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo, A. A. Pasqual.<br>
 <i>International Conference on Digital Image Computing: Techniques and Applications</i> <b>DICTA 2017</b>.
 
@@ -50,8 +50,9 @@ S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo,
 
 ## Preprints
 
-<b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.]()</b><br>
+<b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.](https://arxiv.org/abs/1804.09882)</b><br>
 <b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>.
 
-
+<b>[Random Path Selection for Incremental Learning.](https://arxiv.org/abs/1906.01120)</b><br>
+<b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br>.
 
