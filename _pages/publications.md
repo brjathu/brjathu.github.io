@@ -37,7 +37,7 @@ S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo,
 <i>International Conference on Digital Image Computing: Techniques and Applications</i> <b>DICTA 2017</b>. [[paper](https://ieeexplore.ieee.org/document/8227463/), [poster](../files/DICTA2017_Poster.pdf)]
 
 
-<b>Combined Static and Motion Features for Deep-Networks Based Activity Recognition in Videos.]()</b><br>
+<b>Combined Static and Motion Features for Deep-Networks Based Activity Recognition in Videos.</b><br>
 S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo, A. A. Pasqual.<br>
 <i>IEEE Transactions on Circuits and Systems for Video Technology.</i> <b>TCSVT</b>. [[paper](https://ieeexplore.ieee.org/document/8060555)]
 
