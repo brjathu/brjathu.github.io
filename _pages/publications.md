@@ -14,14 +14,14 @@ author_profile: true
 
 <b>A Multi-modal Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.</b><br>
 <b>J. Rajasegaran</b>, N. Karunanayake, A. Gunathillake, S. Seneviratne, G. Jourjon.<br>
-<i>International World Wide Web Conferences.</i> <b>WWW 2019</b>. [[paper](https://dl.acm.org/citation.cfm?id=3313427), [poster](../files/WACV19_Poster.pdf)]
+<i>International World Wide Web Conferences.</i> <b>WWW 2019</b>. [[paper](https://dl.acm.org/citation.cfm?id=3313427), [poster](../files/WWW19_Poster.pdf)]
 
 
 
 <b>TextCaps : Handwritten Character Recognition with
 Very Small Datasets.]()</b><br>
 V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
-<i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>. [[paper](https://ieeexplore.ieee.org/abstract/document/8658735), [code](https://github.com/brjathu/textcaps)]
+<i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>. [[paper](https://ieeexplore.ieee.org/abstract/document/8658735), [code](https://github.com/brjathu/textcaps),[poster](../files/WACV19_Poster.pdf)]
 
 
 
@@ -34,7 +34,7 @@ Youngki Lee.<br>
 
 <b>Micro Actions and Deep Static Features for Activity Recognition.</b><br>
 S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo, A. A. Pasqual.<br>
-<i>International Conference on Digital Image Computing: Techniques and Applications</i> <b>DICTA 2017</b>. [[paper](https://ieeexplore.ieee.org/document/8227463/)]
+<i>International Conference on Digital Image Computing: Techniques and Applications</i> <b>DICTA 2017</b>. [[paper](https://ieeexplore.ieee.org/document/8227463/), [poster](../files/DICTA2017_Poster.pdf)]
 
 
 <b>Combined Static and Motion Features for Deep-Networks Based Activity Recognition in Videos.]()</b><br>
