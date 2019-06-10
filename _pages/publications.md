@@ -51,8 +51,8 @@ S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo,
 ## Preprints
 
 <b>[A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.](https://arxiv.org/abs/1804.09882)</b><br>
-<b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>.
+<b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br>
 
 <b>[Random Path Selection for Incremental Learning.](https://arxiv.org/abs/1906.01120)</b><br>
-<b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br>.
+<b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br>
 
