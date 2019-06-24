@@ -9,7 +9,7 @@ author_profile: true
 
 <b>DeepCaps : Going Deeper with Capsule Networks.</b><br>
 <b>J. Rajasegaran</b>, V. Jayasundara, S.Jeyasekara, N. Jeyasekara, S. Seneviratne, R. Rodrigo.<br>
-<i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>. [[paper](http://openaccess.thecvf.com/content_CVPR_2019/html/Rajasegaran_DeepCaps_Going_Deeper_With_Capsule_Networks_CVPR_2019_paper.html), [code](https://github.com/brjathu/deepcaps), [poster](../files/CVPR19.pdf), [Oral](https://www.youtube.com/watch?v=PzALQZOy09c&t=3600s)]
+<i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>. [[paper](http://openaccess.thecvf.com/content_CVPR_2019/html/Rajasegaran_DeepCaps_Going_Deeper_With_Capsule_Networks_CVPR_2019_paper.html), [code](https://github.com/brjathu/deepcaps), [poster](../files/CVPR19_Poster.pdf), [Oral](https://www.youtube.com/watch?v=PzALQZOy09c&t=3600s)]
 
 
 <b>A Multi-modal Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.</b><br>
@@ -21,7 +21,7 @@ author_profile: true
 <b>TextCaps : Handwritten Character Recognition with
 Very Small Datasets.]()</b><br>
 V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
-<i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>. [[paper](https://ieeexplore.ieee.org/abstract/document/8658735), [code](https://github.com/brjathu/textcaps),[poster](../files/WACV19_Poster.pdf)]
+<i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>. [[paper](https://ieeexplore.ieee.org/abstract/document/8658735), [code](https://github.com/brjathu/textcaps), [poster](../files/WACV19_Poster.pdf)]
 
 
 
