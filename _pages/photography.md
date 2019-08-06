@@ -4,7 +4,10 @@ permalink: /photography/
 author_profile: true
 ---
 
+
+<!---
 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=kuijZwyt0ZDmhCD3lzVArOH06SuPlVkfXmCWyyTkBJw&cl=ffffff&w=a"></script>
+-->
 
 
 ## Photography
