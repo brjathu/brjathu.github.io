@@ -6,7 +6,7 @@ author_profile: true
 
 <b>Random Path Selection for Incremental Learning.</b><br>
 <b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br>
-<i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>. [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet), [poster](../files/CVPR19_Poster.pdf)]
+<i>Conference on Computer Vision and Pattern Recognition.</i> <b>NeurIPS 2019</b>. [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet), [poster](../files/CVPR19_Poster.pdf)]
 
 
 <b>DeepCaps : Going Deeper with Capsule Networks.</b><br>
