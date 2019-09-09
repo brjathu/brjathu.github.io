@@ -4,14 +4,15 @@ title: "Awards & Honors"
 permalink: /awards/
 author_profile: true
 ---
+
+* **40th General Convocation 2019** Gold Medal for the Electronic and Telecommunication Engineering graduand who has obtained the highest overall GPA.
+<p align="center">
+  <img src="https://brjathu.github.io/images/graduation.jpg" alt="Photo" style="width: 450px;"/> 
+</p>
+
 * **IEEE Myron Zucker Design Contest 2017** First place for designing a digital irrigation system for farmers. Awarding ceremony was held in Cincinnati, Ohio, USA.
 <p align="center">
   <img src="https://brjathu.github.io/images/ias.jpeg" alt="Photo" style="width: 450px;"/> 
-</p>
-
-* **40th General Convocation** Gold Medal for the Electronic and Telecommunication Engineering graduand who has obtained the highest overall GPA.
-<p align="center">
-  <img src="https://brjathu.github.io/images/graduation.jpg" alt="Photo" style="width: 450px;"/> 
 </p>
 
 
