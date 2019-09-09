@@ -4,7 +4,12 @@ permalink: /publications/
 author_profile: true
 ---
 
+<b></b><br>
+<b><br> [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet)]
 
+<b>Random Path Selection for Incremental Learning.</b><br>
+<b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br>
+<i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2019</b>. [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet), [poster](../files/CVPR19_Poster.pdf)]
 
 
 <b>DeepCaps : Going Deeper with Capsule Networks.</b><br>
@@ -42,9 +47,6 @@ S. Ramasinghe, <b>J. Rajasegaran</b>, V. Jayasundara, K. Ranasinghe, R. Rodrigo,
 <i>IEEE Transactions on Circuits and Systems for Video Technology.</i> <b>TCSVT</b>. [[paper](https://ieeexplore.ieee.org/document/8060555)]
 
 ## Preprints
-
-<b>Random Path Selection for Incremental Learning.</b><br>
-<b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br> [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet)]
 
 <b>A Neural Embeddings Approach for Detecting Mobile Counterfeit Apps.</b><br>
 <b>J. Rajasegaran</b>, S. Seneviratne, G. Jourjon.<br> [[paper](https://arxiv.org/abs/1804.09882)]
