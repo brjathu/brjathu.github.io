@@ -6,7 +6,7 @@ author_profile: true
 
 <b>Random Path Selection for Incremental Learning.</b><br>
 <b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br>
-<i>Advances in Neural Information Processing Systems.</i> <b>NeurIPS 2019</b>. [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet), [poster](../files/CVPR19_Poster.pdf)]
+<i>Advances in Neural Information Processing Systems.</i> <b>NeurIPS 2019</b>. [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet), [poster](../files/NeurIPS2019_Poster.pdf)]
 
 
 <b>DeepCaps : Going Deeper with Capsule Networks.</b><br>
