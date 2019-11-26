@@ -16,13 +16,16 @@ redirect_from:
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff"> -->
-
-{% include youtubePlayer.html id=page.youtubeId %}
-
+<meta name="theme-color" content="#ffffff"> 
 <p align="center">
   <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
 </p>
+-->
+
+{% include youtubePlayer.html id=page.youtubeId %}
+<\br>
+"Cars don't run as cheetah, Planes don't fly like birds and Machines won't think same way as humans. They will do better."
+
 
 <!--* Computer vision is trying to match/beat the human brain (100 billion neurons) with GPUs with few hundreds of million. -->
 * Currently I am working with [Dr. Salman Khan](https://scholar.google.com.sg/citations?user=M59O9lkAAAAJ&hl=en) at Inception Institute, mainly focusing on Life Long Learning.
