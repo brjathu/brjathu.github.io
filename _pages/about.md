@@ -21,10 +21,12 @@ redirect_from:
   <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
 </p>
 -->
-
-{% include youtubePlayer.html id=page.youtubeId %}
 <br>
 **Cars don't run like cheetah, Planes don't fly like birds and Machines won't think in a way same as humans. _They will do better._**
+<br>
+{% include youtubePlayer.html id=page.youtubeId %}
+<br>
+
 
 
 <!--* Computer vision is trying to match/beat the human brain (100 billion neurons) with GPUs with few hundreds of million. -->
