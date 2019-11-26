@@ -23,8 +23,8 @@ redirect_from:
 -->
 
 {% include youtubePlayer.html id=page.youtubeId %}
-<\br>
-"Cars don't run as cheetah, Planes don't fly like birds and Machines won't think same way as humans. They will do better."
+<br>
+Cars don't run as cheetah, Planes don't fly like birds and Machines won't think same way as humans. They will do better.
 
 
 <!--* Computer vision is trying to match/beat the human brain (100 billion neurons) with GPUs with few hundreds of million. -->
