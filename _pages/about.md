@@ -1,4 +1,5 @@
 ---
+youtubeId: ipRvjS7q1DI
 permalink: /
 title: "About me"
 excerpt: "About me"
@@ -7,7 +8,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
 
 <!-- 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -18,16 +18,7 @@ redirect_from:
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff"> -->
 
-<div class="embed-container">
-  <iframe
-      src="https://www.youtube.com/watch?v=ipRvjS7q1DI"
-      width="700"
-      height="480"
-      frameborder="0"
-      allowfullscreen="">
-  </iframe>
-</div>
-
+{% include youtubePlayer.html id=page.youtubeId %}
 
 <p align="center">
   <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
