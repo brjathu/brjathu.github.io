@@ -37,6 +37,7 @@ redirect_from:
 
 
 # Recent News
+* February 24, 2020. iTAML [paper](https://arxiv.org/abs/1906.01120) got accepted at CVPR'2020.
 * September 09, 2019. RPS Network [paper](https://arxiv.org/abs/1906.01120) got accepted at NeuIPS'2019 for poster presentation. 
 * February 25, 2019. Deep Capsule Network [paper](https://arxiv.org/abs/1904.09546) got accepted at CVPR'2019 for oral presentation. 
 * January 25, 2019. Finished my final viva at University of Moratuwa.
