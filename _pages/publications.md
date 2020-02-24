@@ -4,6 +4,11 @@ permalink: /publications/
 author_profile: true
 ---
 
+<b>iTAML: An Incremental Task-Agnostic Meta-learning Approach.</b><br>
+<b>J. Rajasegaran</b>, S.Khan, M.Hayat, F.Khan, M.Shah.<br>
+<i>Conference on Computer Vision and Pattern Recognition.</i> <b>CVPR 2020</b>. [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet), [poster](../files/NeurIPS2019_Poster.pdf)]
+
+
 <b>Random Path Selection for Incremental Learning.</b><br>
 <b>J. Rajasegaran</b>, M.Hayat, S.Khan, F.Khan, L.Shao.<br>
 <i>Advances in Neural Information Processing Systems.</i> <b>NeurIPS 2019</b>. [[paper](https://arxiv.org/abs/1906.01120), [code](https://github.com/brjathu/RPSnet), [poster](../files/NeurIPS2019_Poster.pdf)]
