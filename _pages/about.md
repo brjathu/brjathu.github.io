@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 
-<link link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="favicon-16x16.png">
+<link link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="_pages/favicon-16x16.png">
 <!-- 
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
