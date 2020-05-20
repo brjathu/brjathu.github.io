@@ -26,7 +26,7 @@ author_profile: true
 
 
 <b>TextCaps : Handwritten Character Recognition with
-Very Small Datasets.]()</b><br>
+Very Small Datasets.</b><br>
 V. Jayasundara, S.Jeyasekara, N. Jeyasekara, <b>J. Rajasegaran</b>, S. Seneviratne, R. Rodrigo.<br>
 <i>IEEE Winter Conference on Applications of Computer Vision.</i> <b>WACV 2018</b>. [[paper](https://ieeexplore.ieee.org/abstract/document/8658735), [code](https://github.com/brjathu/textcaps), [poster](../files/WACV19_Poster.pdf)]
 
