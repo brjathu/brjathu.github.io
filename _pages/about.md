@@ -13,7 +13,7 @@ redirect_from:
 <link link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="_pages/connection.png">
 
 <br>
-**Cars don't run like cheetah, Planes don't fly like birds and Machines won't think in a way same as humans. _They will do better._ ** --Richard Feynman.
+**Cars don't run like cheetah, Planes don't fly like birds and Machines won't think in a way same as humans. _They will do better._** 
 <br>
 {% include youtubePlayer.html id=page.youtubeId %}
 <br>
