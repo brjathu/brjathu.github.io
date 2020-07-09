@@ -11,17 +11,9 @@ redirect_from:
 
 
 <link link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="_pages/connection.png">
-<!-- 
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff"> 
-<p align="center">
-  <img src="https://brjathu.github.io/images/me2.jpg" alt="Photo" style="width: 450px;"/> 
-</p>
--->
+
 <br>
-**Cars don't run like cheetah, Planes don't fly like birds and Machines won't think in a way same as humans. _They will do better._**
+**Cars don't run like cheetah, Planes don't fly like birds and Machines won't think in a way same as humans. _They will do better._ --Richard Feynman**
 <br>
 {% include youtubePlayer.html id=page.youtubeId %}
 <br>
