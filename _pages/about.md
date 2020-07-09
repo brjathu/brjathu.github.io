@@ -32,4 +32,6 @@ redirect_from:
 * September 09, 2019. RPS Network [paper](https://arxiv.org/abs/1906.01120) got accepted at NeurIPS'2019 for poster presentation. 
 * February 25, 2019. Deep Capsule Network [paper](https://arxiv.org/abs/1904.09546) got accepted at CVPR'2019 for oral presentation. 
 * January 25, 2019. Finished my final viva at University of Moratuwa.
-* January 21, 2019. One [paper](https://dl.acm.org/citation.cfm?id=3313427) accepted to WWW2019.
+* January 21, 2019. One [paper](https://dl.acm.org/citation.cfm?id=3313427) accepted to WWW2019. [Forbes cover](https://www.forbes.com/sites/zakdoffman/2019/06/24/google-play-hosts-thousands-of-malware-riddled-copycat-apps-ai-study-finds/?ss=consumertech#15b075ed66d9)
+
+
