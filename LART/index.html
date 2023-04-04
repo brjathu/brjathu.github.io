@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N57KJW91"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-H6N57KJW91');
+        </script>
+        
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="Jathushan Rajasegaran">
+        
+        <!-- Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  -->
+        <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/gif" href="images/icon.gif">
+        <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+        
+
+        <title>LART</title>
+
+        <script type="text/javascript">
+          if (window.location == "https://brjathu.github.io/LART/") {
+            window.location.href = 'http://people.eecs.berkeley.edu/~jathushan/LART/'; 
+          }
+        </script>
+
+        
+        <!-- OVERRIDE ADDITIONAL STYLES -->
+        <style>
+          a:link, a:visited {
+            color: rgb(7, 102, 161);
+            font-size: 100%; 
+            font-weight: normal;
+          }         
+        </style>
+        
+      </head>
+
+    <body class="container">
+
+        <!-- title and abstract -->
+        <div>
+
+          <!-- Title -->
+          <div class='row'>
+            <div class='col'>
+              <p class="title-text">On the Benefits of 3D Pose and Tracking for Human Action Recognition</p>
+            </div>
+          </div>
+          
+          <!-- Conference -->
+          <div class='row'>
+            <div class='col'>
+              <p class="conference-name">CVPR 2023</p>
+            </div>
+          </div>
+        
+          <!-- authors -->
+          <div class="authors">
+            <a href="http://people.eecs.berkeley.edu/~jathushan/">Jathushan Rajasegaran</a>
+            <a href="https://geopavlakos.github.io/">Georgios Pavlakos</a>
+            <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>
+            <a href="https://feichtenhofer.github.io/">Christoph Feichtenhofer</a>
+            <a href="http://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a>
+          </div>
+
+          <!-- affiliations -->
+          <div class="authors">
+            <a href="https://www.berkeley.edu/">UC Berkeley</a>
+            <a href="https://ai.facebook.com/">Meta AI, FAIR</a>
+          </div>
+          
+          <!-- add links for the paper and code. -->
+          <div class="button-container">
+            <a href="https://arxiv.org/abs/2304.01199">
+              <button class="rounded-button"><span>Paper <i class="fa fa-book"></i></span></button>
+            </a>
+            <!-- <a href="https://github.com/brjathu/LART"> -->
+            <a href=".">
+              <button class="rounded-button"><span>Code (coming soon) <i class="fa fa-github"></i></span></button>
+            </a>
+          </div>
+
+          <!-- teaser -->
+          <br>
+          <div>
+              <video width=100% src="teaser.mp4" style="border-radius: 20px;" type="video/mp4" id="teaser_video" autoplay loop controls></video>
+              <script>
+                // Get the video element
+                var video = document.getElementById('teaser_video');
+                // Set the playback speed to 0.5 (half the normal speed)
+                video.playbackRate = 1.0;
+              </script>     
+          </div>
+
+        </div>
+
+        <!-- Paper section -->
+        <div>
+          <div class='row'>
+            <div class='col'>
+              <p class="abstract-text"><b>Abstract: </b>In this work we study the benefits of using tracking and 3D poses for action recognition. To achieve this, we take the Lagrangian view on analysing actions over a trajectory of human motion rather than at a fixed point in space. Taking this stand allows us to use the tracklets of people to predict their actions. In this spirit, first we show the benefits of using 3D pose to infer actions, and study person-person interactions. Subsequently, we propose a Lagrangian Action Recognition model by fusing 3D pose and contextualized appearance over tracklets. To this end, our method achieves state-of-the-art performance on the AVA v2.2 dataset on both pose only settings and on standard benchmark settings. When reasoning about the action using only pose cues, our pose model achieves +10.0 mAP gain over the corresponding state-of-the-art while our fused model has a gain of +2.8 mAP over the best state-of-the-art model.</p>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- method and text -->
+        <div>
+          <hr>
+          <div class='row'>
+              <div class='col'>
+                  <p class='h2'>Lagrangian Action Recognition with Tracking (LART)</p>
+                  <br>
+                  <p>
+                    <img src="files/teaser.png" width="100%" id="teaser_image">
+                  </p>
+                  <p class="method-text">
+                    Given a video, first, we track every person using a tracking algorithm (e.g. <a href="http://people.eecs.berkeley.edu/~jathushan/PHALP/index.html">PHALP</a>). Then every
+detection in the track is tokenized to represent a human-centric vector (e.g. pose, appearance). To represent 3D pose we use <a href="https://smpl.is.tue.mpg.de">SMPL</a>]
+parameters and estimated 3D location of the person, for contextualized appearance we use <a href="https://arxiv.org/abs/2112.01526">MViT</a> (pre-trained on <a href="https://arxiv.org/abs/2112.09133">MaskFeat</a>])
+features. Then we train a transformer network to predict actions using the tracks. Note that, at the second frame we do not have detection
+for the blue person, at these places we pass a mask token to in-fill the missing detections.
+                  </p>
+              </div>
+          </div>
+        </div>
+        
+        <!-- LART-pose -->
+        <br>
+        <br>
+        <div>
+          <div class='row'>
+              <div class='col'>
+                  <p class='h2'>Action Recognition with Pose (LART-Pose)</p>
+                  <br>
+                  <p>
+                    <img src="files/FIG1.png" width="100%" id="lart_pose">
+                  </p>
+                  <p class="method-text">
+                    <b>Class-wise performance on AVA: </b> We show the performance of <a href="https://openaccess.thecvf.com/content/WACV2022/html/Shah_Pose_and_Joint-Aware_Action_Recognition_WACV_2022_paper.html">JMRN</a>  
+                    and LART-Pose on 60 AVA classes (average precision and relative gain). 
+                    For pose based classes such as <i>standing</i>, <i>sitting</i>, and <i>walking</i> our 3D pose model can achieve 
+                    above 60 mAP average precision performance by only looking at the 3D poses over time. 
+                    By modeling multiple trajectories as input our model can understand the interactions among people. 
+                    For example, activities such as <i>dancing</i> (<b style="color: rgb(2, 151, 129);">+30.1%</b>), <i>martial art</i> (<b style="color: rgb(2, 151, 129);">+19.8%</b>) and <i>hugging</i>
+                    (<b style="color: rgb(2, 151, 129);">+62.1%</b>) have large relative gains over state-of-the-art pose only model. We only plot the gains if it is above or below 1 mAP.
+                  </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- LART (Pose+MViT) -->
+        <br>
+        <br>
+        <div>
+          <div class='row'>
+              <div class='col'>
+                  <p class='h2'>Action Recognition with MVIT+Pose (LART)</p>
+                  <br>
+                  <p>
+                    <img src="files/FIG_FINAL.png" width="100%" id="lart_pose">
+                  </p>
+                  <p class="method-text"><b>Comparison with State-of-the-art methods:</b> We show class-level performance 
+                  (average precision and relative gain) of <a href="https://arxiv.org/abs/2112.01526">MViT</a> (pretrained on <a href="https://arxiv.org/abs/2112.09133">MaskFeat</a>)
+                   and ours. Our methods achieve better performance compared to MViT on over 50 classes out of 60 
+                   classes. Especially, for actions like <i>running</i>, <i>fighting</i>, <i>hugging</i>, and 
+                   <i>sleeping</i> etc., our method achieves over <b style="color: rgb(2, 151, 129);">+5 mAP</b>. This shows the benefit of having 
+                   access to explicit tracks and 3D poses for action recognition. 
+                   We only plot the gains if it is above or below 1 mAP.
+                  </p>
+
+              </div>
+          </div>
+        </div>
+
+        <!-- Qualitative Results -->
+        <br>
+        <br>
+        <div>
+          <div class='row'>
+              <div class='col'>
+                  <p class='h2'>Qualitative Results</p>
+                  <br>
+                  <p>
+                    <img src="files/Q_4.png" width="100%" id="qualitative">
+                  </p>
+                  <p class="method-text"><b>Qualitative Results:</b> We show the predictions from <a href="https://arxiv.org/abs/2112.01526">MViT</a> 
+                    and our model on validation samples from AVA v2.2. The person with the colored mesh indicates the person-of-interest 
+                    for which we recognise the action and the one with the <b style="color: gray;">gray mesh</b> 
+                    indicates the supporting actors.
+                    The first two columns demonstrate the benefits of having access 
+                    to the action-tubes of other people for action prediction. In the first column, 
+                    the <b style="color: orange;">orange person</b> is very close to the other 
+                    person with hugging posture, which makes it easy to predict <i>hugging</i>
+                     with higher probability. Similarly, in the second column, 
+                     the explicit interaction between the multiple people, 
+                     and knowing others also fighting increases the confidence for the 
+                     <i>fighting</i> action for the <b style="color: green;">green person</b> over the 2D 
+                     recognition model. The third and the fourth columns show the benefit of 
+                     explicitly modeling the 3D pose over time (using tracks) 
+                     for action recognition. Where the <b style="color: rgb(179, 179, 12);">yellow person</b> is in 
+                     riding pose and <b style="color: purple;">purple person</b> is looking upwards and legs on a vertical plane. 
+                     The last column indicates the benefit of representing people with an amodal representation. 
+                     Here the hand of the <b style="color: royalblue;">blue person</b> is occluded, so the 2D recognition model does 
+                     not see the action as a whole. However, SMPL meshes are amodal, 
+                     therefore the hand is still present, which boosts the probability 
+                     of predicting the action label for <i>closing the door</i>.
+                  </p>
+
+              </div>
+          </div>
+        </div>
+
+        <!-- More Video Results -->
+        <div>
+          <div class='row'>
+              <div class='col'>
+                <p class='h2'>More Video Results</p>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_Z2t-F5cubpk_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_Z2t-F5cubpk_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_OyO-B-omyS0_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_OyO-B-omyS0_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_xtSBE8LFhXY_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_xtSBE8LFhXY_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_-53DvfE42gE_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_-53DvfE42gE_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics2/kinetics-val_8-5o8e2Y3-0_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics2/kinetics-val_8-5o8e2Y3-0_.jpeg'><br>
+
+                
+
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_VoYauMky8IQ_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_VoYauMky8IQ_.jpeg'><br>
+                <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_7jv141dj_zM_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_7jv141dj_zM_.jpeg'><br> -->
+                <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_H9XWa152whU_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_H9XWa152whU_.jpeg'><br> -->
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_ySvt7w8irBY_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_ySvt7w8irBY_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_ZCITJQfuVCY_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_ZCITJQfuVCY_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_B8WQ7foXaJ4_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_B8WQ7foXaJ4_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_5PvvLJAHj-E_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_5PvvLJAHj-E_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_6KG0mbhejCs_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_6KG0mbhejCs_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val__oQdPnAcCNs_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val__oQdPnAcCNs_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val__AnTe0ywuw0_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val__AnTe0ywuw0_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_ls1fXwwHW3E_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_ls1fXwwHW3E_.jpeg'><br>
+                <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_Ls5n1KFnpeU_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_Ls5n1KFnpeU_.jpeg'><br> -->
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_0YqLJjXmU0I_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_0YqLJjXmU0I_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_v3huVwrvWE4_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_v3huVwrvWE4_.jpeg'><br>
+                <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_DxCF_5q1ReU_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_DxCF_5q1ReU_.jpeg'><br> -->
+                <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_-Y-fUYGcb7o_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_-Y-fUYGcb7o_.jpeg'><br>
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_-gn_eC6qOk0_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_-gn_eC6qOk0_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_--yCUKj4Oq4_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_--yCUKj4Oq4_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_5YkINInb29k_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_5YkINInb29k_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_9_GQ2Sz20ds_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_9_GQ2Sz20ds_.jpeg'><br> -->
+                  <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_-HutuMqTAPw_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_-HutuMqTAPw_.jpeg'><br>
+                  <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_xpFW8m5PZCA_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_xpFW8m5PZCA_.jpeg'><br>
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val__kcVbo4E2JQ_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val__kcVbo4E2JQ_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_4pJ_UNWqLWQ_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_4pJ_UNWqLWQ_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val__3l3WdE36TI__.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val__3l3WdE36TI__.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_OK2iI2F7KIY_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_OK2iI2F7KIY_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_lBg84JYUZHM_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_lBg84JYUZHM_.jpeg'><br> -->
+                  <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_61oPN1ONIk8_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_61oPN1ONIk8_.jpeg'><br>
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_sa2rr6ZQiPE_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_sa2rr6ZQiPE_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_-6ykAmBXIr0_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_-6ykAmBXIr0_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_--wYHtYMK9o_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_--wYHtYMK9o_.jpeg'><br> -->
+                  <!-- <video width='100%' class='video-results' data-src='files/videos_kinetics/kinetics-val_2KQ1mvI_k2Y_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                  <img class='thumbnail' width='100%' data-src='files/videos_kinetics/kinetics-val_2KQ1mvI_k2Y_.jpeg'><br> -->
+
+                </div>
+              </div>
+            </div>
+        
+        <!-- More Video Results -->
+        <div>
+          <div class='row'>
+              <div class='col'>
+                <p class='h2'>More Video Results</p>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/posetrack-val_008827_mpii_test_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/posetrack-val_008827_mpii_test_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/mot15_MOT17-08-DPM_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/mot15_MOT17-08-DPM_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/posetrack-val_010016_mpii_test_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/posetrack-val_010016_mpii_test_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/posetrack-val_003503_mpii_test_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/posetrack-val_003503_mpii_test_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/posetrack-val_015302_mpii_test_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/posetrack-val_015302_mpii_test_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/posetrack-val_001001_mpii_test_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/posetrack-val_001001_mpii_test_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/posetrack-val_022688_mpii_test_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/posetrack-val_022688_mpii_test_.jpeg'><br>
+                <video width='100%' class='video-results' data-src='files/videos_posetrack/posetrack-val_001735_mpii_test_.mp4', type='video/mp4' autoplay muted loop></video><br>
+                <img class='thumbnail' width='100%' data-src='files/videos_posetrack/posetrack-val_001735_mpii_test_.jpeg'><br>
+              </div>
+          </div>
+        </div>
+        <!-- <br>
+        <br>
+        <div class='row'>
+          <div class="col mx-auto">
+            <p class='h2'>More Video Results on Kinetics</p>
+                <div id="results-carousel" class="carousel">
+                  <div class="item"><video src="files/videos_kinetics/002.mp4" loop class="lazyload" preload="none" data-autoplay="" autoplay playsinline></video></div>
+                  <div class="item"><video src="files/videos_kinetics/002.mp4" loop class="lazyload" preload="none" data-autoplay="" autoplay playsinline></video></div>
+              </div>
+          </div>
+        </div> -->
+
+
+        <!-- Related Projects -->
+        <div>
+          <hr>
+          <div class='row'>
+              <div class='col'>
+                  <p class='h2'>Related Projects</p>
+                  
+                  <table style="width:100%; border:0px; border-spacing:0px; border-collapse:separate; margin-right:auto; margin-left:auto;">
+                    <tbody>
+                        <tr>
+                            <td style="padding:20px; width:25%; vertical-align:middle; text-align:center">
+                                <img src='../images/phalp_gif2.gif' width="200" id="phalp_image">
+                            </td>
+                            <td style="padding:20px; width:75%; vertical-align:middle; font-size: 18px;">
+                              <a href="https://arxiv.org/pdf/2112.04477.pdf">
+                                Tracking People by Predicting 3D Appearance, Location and Pose.
+                              </a>
+                              <br>
+                              <a href="http://people.eecs.berkeley.edu/~jathushan/">Jathushan Rajasegaran</a>,
+                              <a href="https://geopavlakos.github.io/">Georgios Pavlakos</a>,
+                              <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>,
+                              <a href="http://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a>
+                              <br>
+                              <em>CVPR</em>, 2022 &nbsp; 
+                              <a href="https://youtu.be/GIOyBbSu2gw?t=3664" style="color: crimson;">(Oral Presentation, Best paper finalist - Top 0.4%)</a>
+                              <br>
+                              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Rajasegaran_Tracking_People_by_Predicting_3D_Appearance_Location_and_Pose_CVPR_2022_paper.pdf">paper</a>/
+                              <a href="https://arxiv.org/pdf/2112.04477.pdf">arxiv</a>/
+                              <a href="../PHALP/index.html">project page</a>/
+                              <a href="https://youtu.be/5xAbTpH8pO8">video</a>/
+                              <a href="https://www.youtube.com/watch?v=yY2hgeXn114">results</a>/
+                              <a href="../PHALP/files/cvpr2022_poster.pdf">poster</a>/
+                              <a href="https://github.com/brjathu/PHALP">code</a>
+                              <p></p>
+                              <p style="font-size: 18px;">Performing monocular tracking of people by predicting their appearance, pose and location and in 3D.</p>
+                            </td>
+                            
+                        </tr>
+
+                        <tr>
+                          <td style="padding:20px; width:25%; vertical-align:middle; text-align:center">
+                              <img src='../images/t3po_gif.gif' width="200" id="t3po_image">
+                          </td>
+                          <td style="padding:20px; width:75%; vertical-align:middle; font-size: 18px;">
+                            <a href="https://papers.nips.cc/paper/2021/hash/c74c4bf0dad9cbae3d80faa054b7d8ca-Abstract.html">
+                              Tracking People with 3D Representations.
+                            </a><br>	
+                            <a href="http://people.eecs.berkeley.edu/~jathushan/">Jathushan Rajasegaran</a>,
+                            <a href="https://geopavlakos.github.io/">Georgios Pavlakos</a>, 
+                            <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>,
+                            <a href="http://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a>
+                            <br>
+                            <em>NeurIPS</em>, 2021 
+                            <br>
+                            <a href="https://papers.nips.cc/paper/2021/hash/c74c4bf0dad9cbae3d80faa054b7d8ca-Abstract.html">paper</a>/
+                            <a href="https://arxiv.org/pdf/2111.07868.pdf">arxiv</a>/
+                            <a href="../T3DP/index.html">project page</a>/
+                            <a href="https://www.youtube.com/watch?v=T4lCBfHWzC8">video</a>/
+                            <a href="https://github.com/brjathu/T3DP">code</a>/
+                            <a href="../data/NeurIPS2021_poster.png">poster</a>
+                            <p></p>
+                            <p style="font-size: 18px;">Performing monocular tracking of people by lifting them to 3D and then using 3D representations of their appearance, pose and location.</p>
+                          </td>
+                      </tr>
+
+                    </tbody>
+                </table>
+
+              </div>
+          </div>
+        </div>      
+        
+
+        <!-- Citation -->
+        <div>
+          <hr>
+          <div class='row'>
+            <div class='col'>
+                <p class='h2'>Citation</p>
+                  <pre class="citation-text">
+  @inproceedings{rajasegaran2023action,
+    title={On the Benefits of 3D Pose and Tracking for Human Action Recognition},
+    author={Rajasegaran, Jathushan and Pavlakos, Georgios and Kanazawa, Angjoo and Feichtenhofer, Christoph and Malik, Jitendra},
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    year={2023}
+  }</pre>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Ack -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col'>
+                  <p class='h2'>Acknowledgements</p>
+                  <p class='acknowledgements-text'>This work was supported by the FAIR-BAIR program as well as ONR MURI (N00014-21-1-2801). We thank Shubham Goel, for helpful discussions.
+                </div>
+            </div>
+        </div>
+
+
+
+
+      <!-- Laxy loadingi https://github.com/aFarkas/lazysizes -->
+      <script src="lazysizes.min.js" async=""></script>
+      <script src="ls.unveilhooks.min.js" async=""></script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2KJW23TXF"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-H2KJW23TXF');
+      </script>
+
+      <!-- Bulma carousel -->
+      <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+      <script>
+          bulmaCarousel.attach('#results-carousel', {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              loop: true,
+              infinite: true,
+          });  
+      </script>
+
+      <script>
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              const src = video.dataset.src;
+              if (src) {
+                video.src = src;
+                video.removeAttribute('data-src');
+                observer.unobserve(video);
+              }
+            }
+          });
+        });
+        
+        const videos = document.querySelectorAll('video.video-results');
+        videos.forEach(function(video) {
+          observer.observe(video);
+        });
+      
+      </script>
+
+    </body>
+</html>

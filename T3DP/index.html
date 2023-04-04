@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N57KJW91"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-H6N57KJW91');
+      </script>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <title>T3DP</title>
+      <script type="text/javascript">
+        if (window.location == "https://brjathu.github.io/T3DP/") {
+            window.location.href = 'http://people.eecs.berkeley.edu/~jathushan/T3DP/'; 
+        }
+      </script>
+        
+    </head>
+    <body class="container" style="max-width:920px">
+        <!-- Title -->
+        <div>
+            <div class='row mt-5 mb-2'>
+                <div class='col text-center'>
+                    <p class="h1 font-weight-normal">Tracking People with 3D Representations</p>
+                </div> 
+            </div>
+
+            <div class='row mt-2 mb-3'>
+              <div class='col text-center'>
+                <p class="h4 font-weight-normal">NeurIPS 2021</p>
+              </div>
+            </div>
+
+
+            
+
+            <!-- authors -->
+            <div class='col text-center h5 font-weight-bold mb-1'>
+              <a class="col-md-3 col-xs-7" href="http://people.eecs.berkeley.edu/~jathushan/"><span>Jathushan Rajasegaran</span></a>
+              <a class="col-md-3 col-xs-7" href="https://geopavlakos.github.io/"><span>Georgios Pavlakos</span></a>
+              <a class="col-md-3 col-xs-7" href="https://people.eecs.berkeley.edu/~kanazawa/"><span>Angjoo Kanazawa</span></a>
+              <a class="col-md-3 col-xs-7" href="http://people.eecs.berkeley.edu/~malik/"><span>Jitendra Malik</span></a>
+            </div>
+
+            <!-- affiliations -->
+            <div class='row text-center mt-3 mb-3' >
+		          <a class="col-md-12" href="https://www.berkeley.edu/"><span>UC Berkeley</span></a>
+            </div>
+	    <div>
+      	    <img width=100% src="files/teaser.png"/>
+	    </div>
+        </div>
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="" style="max-width:200px; margin-left:auto; margin-right:auto; vertical-align: middle">
+                            <img src="files/paper.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="h5" href="https://arxiv.org/pdf/2111.07868.pdf" style="margin-right:10px">
+                                <span>[paper]</span>
+                            </a>
+                            <!-- <a class="h5" href="files/prohmr-supp.pdf" style="margin-right:10px">
+                                <span>[Supplementary]</span>
+                            </a> -->
+                            <a class="h5" href="https://github.com/brjathu/T3DP" style="margin-right:10px">
+                                <span>[code]</span>
+                            </a> <br>
+                            <a class="h5" href="http://people.eecs.berkeley.edu/~jathushan/PHALP" style="margin-right:10px">
+                                <span><p style="color:#0ae31c">[Check our recent work!]</p></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-9 col-sm-9 col-xs-12'>
+                    <p class='h5 font-weight-bold '>Abstract</p>
+                    <p style="text-align:justify">
+                      We present a novel approach for tracking multiple people in video. Unlike past approaches which employ 2D representations, we focus on using 3D representations of people, located in three-dimensional space. To this end, we develop a method, Human Mesh and Appearance Recovery (HMAR) which in addition to extracting the 3D geometry of the person as a SMPL mesh, also extracts appearance as a texture map on the triangles of the mesh. This serves as a 3D representation for appearance that is robust to viewpoint and pose changes. Given a video clip, we first detect bounding boxes corresponding to people, and for each one, we extract 3D appearance, pose, and location information using HMAR. These embedding vectors are then sent to a transformer, which performs spatio-temporal aggregation of the representations over the duration of the sequence. The similarity of the resulting representations is used to solve for associations that assigns each person to a tracklet. We evaluate our approach on the Posetrack, MuPoTs and AVA datasets. We find that 3D representations are more effective than 2D representations for tracking in these settings, and we obtain state-of-the-art performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Video -->
+        <div>
+          <hr>
+          <div class="row mb-5 text-center">
+            <div class="col">
+                <h3>Video</h3>
+                  <div class='text-center center-block' style=" margin-left:auto; margin-right:auto; max-width:640px">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/T4lCBfHWzC8" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        
+
+
+        <!-- Results -->
+        <!-- <div>
+          <hr>
+          <div class="row mb-5 text-center">
+            <div class="col">
+                <h3>Results</h3>
+                  <div class='text-center center-block' style=" margin-left:auto; margin-right:auto; max-width:640px">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://drive.google.com/file/d/1vOF6wG_9qPIuhW-uzZ-Mhgq081r5T8OB/preview" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                  </div>
+                  <p class='h4'><a href="https://sites.google.com/view/t3po">more videos at sites.google.com/view/t3po</a></p> 
+            </div>
+          </div>
+        </div> -->
+
+        <div>
+          <hr>
+          <div class="row mb-5 text-center">
+            <div class="col">
+                <h3>Results</h3>
+                  <div class='text-center center-block' style=" margin-left:auto; margin-right:auto; max-width:640px">
+                    <!-- <div style="position:relative;padding-top:56.25%;"> -->
+                      <a><video width=100% src="files/1.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                      <a><video width=100% src="files/2.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                      <a><video width=100% src="files/3.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                      <a><video width=100% src="files/4.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                      <a><video width=100% src="files/5.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                      <a><video width=100% src="files/6a.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                      <a><video width=100% src="files/7.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                      <a><video width=100% src="files/8.mp4", type="video/mp4" autoplay muted loop/></video></a></br>
+                    <!-- </div> -->
+                  </div>
+                  <!-- <p class='h4'><a href="https://sites.google.com/view/t3po">more videos at sites.google.com/view/t3po</a></p>  -->
+            </div>
+          </div>
+        </div>
+        
+
+
+        <!-- Citation -->
+        <div>
+          <hr>
+          <div class='row mb-12 text-center'>
+              <div class='col'>
+                  <p class='h2'>Citation</p>
+                  <div class="form-group col-md-12 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly rows="8">
+@article{rajasegaran2021tracking,
+    title={Tracking People with 3D Representations},
+    author={Rajasegaran, Jathushan and Pavlakos, Georgios and Kanazawa, Angjoo and Malik, Jitendra},
+    journal={Advances in Neural Information Processing Systems},
+    volume={34},
+    pages={23703--23713},
+    year={2021}
+}</textarea>
+                </div>
+              </div>
+          </div>
+      </div>
+
+        
+
+        <!-- Ack -->
+        <div>
+            <hr>
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <p class='h2'>Acknowledgements</p>
+                    <div class='text-left'>
+                        <p>This work was supported by ONR MURI (N00014-14-1-0671) as well as BAIR and BDD sponsors.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
