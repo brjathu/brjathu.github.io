@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Earth 616</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="mason.css" />
+		<noscript><link rel="stylesheet" href="style/galary/css/noscript.css" /></noscript>
+
+		<script>
+			/***************************
+* Lazy-load de imágenes con el desplazamiento. (2)
+* Autor del Js: Furoya
+* Post: https://escss.blogspot.com/2015/06/javascript-con-furoya-parallax-y-lazy.html
+***************************/
+
+var cadaNoscript, altoViewPort, desplazado, posicionCambio; 
+
+
+function mueve() {
+cadaNoscript = document.querySelectorAll("figure noscript"); 
+
+altoViewPort = window.innerHeight; 
+
+desplazado = self.pageYOffset || document.documentElement.scrollTop; 
+
+posicionCambio = desplazado + altoViewPort - 100;
+
+  for(ns=0; ns<cadaNoscript.length; ns++){
+    if(cadaNoscript[ns].parentElement.offsetTop < posicionCambio){
+    var codigo = cadaNoscript[ns].innerHTML;  
+
+    codigo = codigo.replace(/&lt;/gi, "<").replace(/&gt;/gi, ">"); 
+
+    cadaNoscript[ns].outerHTML = codigo; 
+    }
+  }
+}
+
+onscroll = mueve; 
+
+
+		</script>
+	</head>
+	<body>
+
+		<div class='wrap'>
+
+			<figure><img src='photos/FromFB/14.jpg' alt /></figure>
+			
+		</div>
+		
+		
+	</body>
+</html>
