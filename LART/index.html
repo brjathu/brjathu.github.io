@@ -111,7 +111,7 @@
         <div>
           <div class='row'>
             <div class='col'>
-              <p class="abstract-text"><b>Abstract: </b>In this work we study the benefits of using tracking and 3D poses for action recognition. To achieve this, we take the Lagrangian view on analysing actions over a trajectory of human motion rather than at a fixed point in space. Taking this stand allows us to use the tracklets of people to predict their actions. In this spirit, first we show the benefits of using 3D pose to infer actions, and study person-person interactions. Subsequently, we propose a Lagrangian Action Recognition model by fusing 3D pose and contextualized appearance over tracklets. To this end, our method achieves state-of-the-art performance on the AVA v2.2 dataset on both pose only settings and on standard benchmark settings. When reasoning about the action using only pose cues, our pose model achieves +10.0 mAP gain over the corresponding state-of-the-art while our fused model has a gain of +2.8 mAP over the best state-of-the-art model.</p>
+              <p class="abstract-text"><b>Abstract: </b>In this work we study the benefits of using tracking and 3D poses for action recognition. To achieve this, we take the Lagrangian view on analysing actions over a trajectory of human motion rather than at a fixed point in space. Taking this stand allows us to use the tracklets of people to predict their actions. In this spirit, first we show the benefits of using 3D pose to infer actions, and study person-person interactions. Subsequently, we propose a Lagrangian Action Recognition model by fusing 3D pose and contextualized appearance over tracklets. To this end, our method achieves state-of-the-art performance on the AVA v2.2 dataset on both pose only settings and on standard benchmark settings. When reasoning about the action using only pose cues, our pose model achieves +10.0 mAP gain over the corresponding state-of-the-art while our fused model has a gain of +2.8 mAP over the best state-of-the-art model. Our best model achieve 45.1 mAP on AVA v2.2 action recognition task.</p>
             </div>
           </div>
         </div>
@@ -182,6 +182,13 @@ for the blue person, at these places we pass a mask token to in-fill the missing
                    We only plot the gains if it is above or below 1 mAP.
                   </p>
 
+                  <br>
+                  <p>
+                    <img src="files/FIG_FINAL_Hiera2.png" width="100%" id="lart_pose">
+                  </p>
+                  <p class="method-text"><b>Comparison with State-of-the-art method (Hiera):</b> Our best model, using Hiera as the backbone and trained on AVA v2.2, achieves 45.1 mAP on AVA v2.2 action recognition task.
+                    </p>
+                  
               </div>
           </div>
         </div>
@@ -432,6 +439,7 @@ for the blue person, at these places we pass a mask token to in-fill the missing
     title={On the Benefits of 3D Pose and Tracking for Human Action Recognition},
     author={Rajasegaran, Jathushan and Pavlakos, Georgios and Kanazawa, Angjoo and Feichtenhofer, Christoph and Malik, Jitendra},
     booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages={640--649},
     year={2023}
   }</pre>
             </div>
