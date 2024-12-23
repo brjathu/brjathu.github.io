@@ -547,6 +547,9 @@ div.container.blog.gray {
 div.container.blog.blue {
   background-color: #e2f4fa;
 }
+div.container.blog.orange {
+  background-color: #fff5f0;
+}
 div.container.blog.gray p.caption {
   padding-bottom: 0;
 }

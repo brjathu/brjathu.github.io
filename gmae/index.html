@@ -3,8 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clarity: A Minimalist Website Template for AI Research</title>
-    <meta name="description" content="We've presented Clarity, a minimalist and elegant website template for AI research.">
+    <title>GMAE</title>
+    <meta name="description" content="Gaussian Masked Autoencoders">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta name="robots" content="all">
     <meta content="en_EN" property="og:locale">
@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@your_twitter_id">
-    <meta name="twitter:description" content="Clarity: A Minimalist Website Template for AI Research">
+    <meta name="twitter:description" content="GMAE">
     <meta name="twitter:image:src" content="assets/figures/clarity.png">
     
     <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheets/main_free.css" />
@@ -47,22 +47,21 @@
 <body>
     <!-- Title Page -->
     <!-- Dark Theme Example: Change the background colour dark and change the following div "blog-title" into "blog-title white". -->
-    <div class="container blog" id="first-content" style="background-color: #043148;">
+    <div class="container blog" id="first-content" style="background-color: #984a0b;">
         <!-- If you don't have a project cover: Change "blog-title" into "blog-title no-cover"  -->
         <div class="blog-title white">
             <div class="blog-intro">
                 <div>
-                    <h1 class="title">Autoregressive Pre-training from Videos</h1>
-                    <p class="author">Jathushan Rajasegaran<sup>1,2</sup>, Ilija Radosavovic<sup>2</sup>, Rahul Ravishankar<sup>2</sup>, Yossi Gandelsman<sup>2</sup>,
-                        Christoph Feichtenhofer<sup>1</sup>, Jitendra Malik<sup>1,2</sup></p>
+                    <h1 class="title">Gaussian Masked Autoencoders</h1>
+                    <p class="author">Jathushan Rajasegaran<sup>1,2</sup>,Xinlei Chen<sup>2</sup>, Rulilong Li<sup>2</sup>, 
+                        Christoph Feichtenhofer<sup>1</sup>, Jitendra Malik<sup>1,2</sup>, Shiry Ginosar<sup>2</sup></p>
                     
                     <p class="author" style="padding-top: 0px;">
                         <sup>1</sup> Meta AI, FAIR, <sup>2</sup> UC Berkeley
                     </p>
 
                     <p class="abstract">
-                        We empirically study generative pre-training from videos. Our approach is conceptually simple and inspired by generative pre-training from text and images. To enable scaling to videos, we make several important improvements along the data, architecture, and evaluation axes. Our model, called <b>toto</b>, is a causal transformer that generates videos autoregressively, one token at a time. We pre-train our model on a diverse set of videos with over 1 trillion visual tokens. Our tokens are quantized patch embeddings,  
-                        and we use relative embeddings for coarse-to-fine pre-training. We conduct a large-scale study across a suite of diverse benchmarks, including image recognition, video classification, object tracking, robotic manipulation and scaling behaviors. We find that, despite minimal inductive biases, our approach achieves competitive performance across all benchmarks. 
+                        This paper explores Masked Autoencoders (MAE) with Gaussian Splatting. While reconstructive self-supervised learning frameworks such as MAE operate on low-level pixels, the image synthesis community has evolved to use latent, <i>mid-level</i> representations for better generative visual data modeling. Our approach, named Gaussian Masked Autoencoder, or GMAE, aims to reconcile these two and get the benefits of both worlds. Like MAE, it reconstructs the image end-to-end in the pixel space; but beyond MAE, it also introduces an intermediate, 3D Gaussian-based representation and renders images via splatting. We show that GMAE can enable various zero-shot learning capabilities (e.g., figure-ground segmentation, image layering, edge detection, etc) while preserving the high self-supervised representation quality from MAE. To our knowledge, we are the <i>first to employ Gaussian primitives in an image representation learning framework</i> beyond optimization-based single-scene reconstructions. We believe GMAE will inspire further research in this direction and contribute to developing next-generation techniques for modeling high-fidelity visual data.
                     </p>
 
                   
@@ -80,7 +79,7 @@
                     <div class="info">
                         <div>
                             <a href="https://arxiv.org" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)"> Paper <i class="fa-solid fa-book-open"></i></a> &nbsp;&nbsp; 
-                            <a href="https://github.com" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Code <i class="fa-solid fa-code"></i></a>  &nbsp;&nbsp; 
+                            <a href="https://github.com/brjathu/chewbacca" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Code <i class="fa-solid fa-code"></i></a>  &nbsp;&nbsp; 
                             <!-- <a href="https://www.microsoft.com/en-gb/microsoft-365/powerpoint" class="button icon" style="background-color: rgba(255, 255, 255, 0.2);">Slides <i class="fa-regular fa-file-powerpoint"></i></a> &nbsp;&nbsp;  -->
                             <!-- <a href="https://huggingface.co/spaces/" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Demo <i class="fa-solid fa-laptop-code"></i></a>  -->
                         </div>
@@ -90,247 +89,209 @@
             </div>
 
             <div class="blog-cover">
-                <img class="foreground" src="assets/figures/toto.png">
-                <img class="background" src="assets/figures/toto.png">
+                <img class="foreground" src="assets/figures/gmae.png">
+                <img class="background" src="assets/figures/gmae.png">
             </div>
         </div>
     </div>
 
 
-    <div class="container blog main first" id="blog-main">
-        <h1 >
-            Introduction
-        </h1>
-        <p class='text'>
-        In a paper published in 1951, Shannon, having just published the foundational papers of information theory, proposed a “guessing game” of next word prediction to estimate the entropy of English. Nearly 70 years later, training a high-capacity transformer network on this task, provided the generative pre-training backbone for Large Language Models.
+    <div class="container blog main first" id="introduction1">
+        <h1>Introduction</h1>
+    
+        <p class="text">
+            Building on top of text tokens, generative language modeling has been tremendously successful in recent years. But what might good tokens for modeling visual data be? Plain pixels? Patches? Learned primitives? Computer vision systems, by nature, process raw, low-level observations of the world, but intelligent visual reasoning frequently requires higher-level semantic abstractions of the data. How can we effectively address this abstraction gap?
         </p>
-
-        <p class='text'>
-        Less well known is the fact that in 1954, Fred Attneave proposed an analog of Shannon’s task for images. To quote “We may divide the picture into arbitrarily small elements which we “transmit” to a subject (S) in a cumulative sequence, having them guess at the color of each successive element until they are correct. 
-        This method of analysis resembles the scanning process used in television and facsimile systems and accomplishes the like purpose of transforming two spatial dimensions into a single sequence in time”. 
+    
+        <p class="text">
+            One way is via learned latent representations. A great example is from image synthesis, where popular frameworks such as diffusion and auto-regressive models have shifted from directly operating on pixels to operating on latent spaces. Such latents serve as <i>mid-level representations</i> with desired properties (e.g., discreteness or compactness). Operating on latent spaces allows subsequent stages of learning to concentrate on higher-level tasks.
         </p>
-
-        <!-- <p class='text'>
-        While Attneave was concerned with images, in the context of 2024, we have to note the “Big Visual Data” is in videos. While there are concerns that most of the text available on the Internet has already been used by the language models, in video we just started on the journey of Big Data exploitation. 
-        </p> -->
-
-        <p class='text'>
-        We propose a method for generative pre-training from videos. We build 
-        <b>toto: Token to Token Video Models</b> with 
-        necessary architectural changes to enable scaling to videos, inspired from iGPT. Figure below shows our overall framework, we use multiple data sources, such as internet style exocentric videos, egocentric videos, and images to pre-train our models. Our pre-training objective is simple and follows language modeling, by predicting the next token. We then evaluate our models on various downstream tasks and show that generative video pre-training can lead to strong representations, for image, video understanding, and robot manipulation tasks. 
+    
+        <p class="text">
+            Self-supervised learning frameworks in vision, in particular ones that learn by <i>reconstruction</i>, have also investigated heavily into this important question. However, while initial efforts have tapped different tokens such as VAE or manually designed features, Masked Autoencoders (MAE) demonstrated that representation learning could be just as effective by directly predicting the RGB values of masked patches. By directly predicting pixels, MAE enjoys both <i>simplicity</i> -- no complication in staged training or dependence on external models, and <i>end-to-end optimizability</i> -- a fundamental idea that underpins the success of deep learning.
         </p>
-
-        <!-- <p class='text'>
-        In summary, this paper studies two central questions: (1) what is an appropriate architecture for generative pre-training in vision, and (2) what are the benefits of generative pre-trained features for vision tasks? First, we study the effects of various tokenization approaches (e.g. VQGAN, dVAE, patches) and find that, most of these perform similar to each other. We find that relative positional embeddings are better than absolute ones, allowing us to extend the context length and resolution in a straightforward manner. Our architecture enables us to train models on videos and images jointly.
-        </p> -->
-
-        <!-- <p class='text'>
-        We pre-train three model sizes, up to 1 billion parameters on a large set of videos and images containing over 1 trillion tokens or the equivalent of 144 thousand hours of videos. We evaluate these models on various tasks such as image recognition, action recognition, object tracking, object permanence, and object manipulation with robots. Our findings show that, with minimal inductive biases our autoregressive generative pre-trained models perform competitively to state-of-the-art approaches and show promising direction for training large-scale vision models on large quantities unfiltered video data. Finally, we study the scaling behaviours of <b>toto</b> and show a power law relationship of loss vs optimal compute. 
-        </p> -->
-
     </div>
+      
 
-    <div class="container blog main blue", >
-        <img src="assets/figures/toto_main.png">
+    <div class="container blog main orange">
+        <img src="assets/figures/gmae_main.png">
         <p class="caption">
-            <b>Overall Framework:</b> Starting with images and video frames from a collection of datasets, we tokenize each frame/image into discrete visual tokens independently.
-    We pre-train the transformer by predicting the next visual tokens, with a context length of 4K tokens of images or video frames. Once trained, we take the intermediate representations and evaluate them on various tasks.    
+            <b>Masked Autoencoding via Gaussian Splatting:</b> The ViT Encoder processes masked input image patches to produce <span style="background-color: rgba(255, 165, 0, 0.3); padding: 2px 4px; border-radius: 4px;">latent embeddings</span>. The ViT Decoder then predicts explicit Gaussian parameters based on <span style="background-color: rgba(0, 0, 255, 0.3); padding: 2px 4px; border-radius: 4px;">query tokens</span>, including color, opacity, center, scale, and orientation. These Gaussians are then rendered via differentiable volume splatting to reconstruct the original image. We pre-train our models fully end-to-end with self-supervision.
         </p>
     </div>
 
-
-
-    <div class="container blog main first" id="pretraining">
-        <h1>Pre-training</h1>
-
-            <p class="text">
-                Given a large collection of images and videos, we tokenize all of them into a 1D sequence using raster scan ordering. This produces a dataset of tokens, $\{x^j_1, x^j_2, x^j_3, ..., x^j_n\}$ where $j$ is the sample either from a video or an image and $n$ is the number of tokens in an image or a video. We model the density $p(x)$ as:
-            </p>
-        
-            <p class="text" style="text-align: center;">
-                $$p(x^j) = \prod_{i=1}^{n} p(x^j_i | x^j_{i-1}, x^j_{i-2}, ..., x^j_{1}, \theta)$$
-            </p>
-        
-            <p class="text">
-                Here, $\theta$ is the model parameters, which can be optimized by minimizing the negative log-likelihood loss:
-            </p>
-        
-            <p class="text" style="text-align: center;">
-                $$\mathcal{L}_{\text{pre-train}} = \mathop{\mathbb{E}}_{x^j \sim X} -\log p(x^j).$$
-            </p>
-        
-            <p class="text">
-                Using this loss, we pre-train our models at different sizes on over one visual trillion tokens. These tokens are generated from images and video. The figure shows the training loss of 3 differently sized models with 120m, 280m and 1.1b parameters.
-            </p>
-    </div>
-
-    <div class="container blog main blue", >
-        <img src="assets/figures/toto_pretrain.png" style="width: 70%;">
-        <p class="caption">
-            <b>Training Loss Curves:</b> We show the training loss curves for base, large, and 1b models trained with tokens from dVAE with a vocabulary size of 8k and context length of 4k tokens (equivalent to 16 images or video frames).
-        </p>
-    </div>
     
-
-
-
-
-    <div class="container blog main first" id="compute-scaling">
-        <h1>Compute Optimal Scaling</h1>
-       
-            <p class="text">
-                We study the scaling behaviours of toto using $\mu$-Parameterization. First we train various models a1-a6, with linearly increasing hidden size and number of layers, and we used VQGAN tokenizer. Then we tune the learning rate for these models, with $\mu$-Parameterization. The analysis shows optimal learning rate of $2^{-7}$ for all the model widths.
-            </p>
-        
-            <p class="text">
-                Once we find the optimal learning rate, we train a1-a6 models on our data mixture, as mentioned in the datasets table. The figure shows the loss vs compute of toto models. This shows a clear power law relationship with compute and validation loss. Based on these experiments toto shows a power law of:
-            </p>
-        
-            <p class="text" style="text-align: center;">
-                $$L(C) = 7.32 \cdot C^{-0.0378}$$
-            </p>
-        
-            <p class="text">
-                Interestingly, if we look at GPT3 power law relationship, it has:
-            </p>
-        
-            <p class="text" style="text-align: center;">
-                $$L(C) = 2.57 \cdot C^{-0.0480}$$
-            </p>
-        
-            <p class="text">
-                While these are not comparable directly, but the scaling coefficient shows how much change in loss for an added extra compute. This shows, that visual next token models such as toto scales, but at a slower rate than language only models.
-            </p>
-    </div>
-
-    <div class="container blog main blue", >
-        <img src="assets/figures/toto_scaling.png" style="width: 70%;">
-        <p class="caption">
-            <b>Training Loss Curves:</b> We show the training loss curves for base, large, and 1b models trained with tokens from dVAE with a vocabulary size of 8k and context length of 4k tokens (equivalent to 16 images or video frames).
-        </p>
-    </div>
-
-
-
-
-    <div class="container blog main first" id="limitations">
-        <h1>Experiments</h1>
-        
-        
-        <div style="width: 80%; text-align: justify; margin: 0 auto 20px auto;">
-            <div style="width: 50%; margin: 0 auto;">
-                <img src="assets/figures/exp5.png" style="width: 100%;">
-            </div>
-            <p class="caption">
-                <b>ImageNet Results:</b> We compare discriminative and generative models on ImageNet recognition task. While achieving comparable performance among generative models, our models model achieves the highest accuracy on autoregressive modeling. <sup>†</sup>models are evaluated with linear probing.
-            </p>
-        </div>
-
-        <div style="width: 80%; text-align: justify; margin: 0 auto 20px auto;">
-            <div style="width: 50%; margin: 0 auto;">
-                <img src="assets/figures/exp6.png" style="width: 100%;">
-            </div>
-            <p class="caption">
-                <b>K400 Results:</b> We compare discriminative and generative models on Kinetics-400 action recognition task. While achieving comparable performance among generative models, our models are the first to show the competitive performance on K400 with autoregressive pre-training, and shows scaling with large model sizes.
-            </p>
-        </div>
-
-        <div style="width: 80%; text-align: justify; margin: 0 auto 20px auto;">
-            <div style="width: 60%; margin: 0 auto;">
-                <img src="assets/figures/exp7.png" style="width: 100%;">
-            </div>
-            <p class="caption">
-                <b>Ego4D Results:</b> Our model achieves comparable mean-average precision compared to previous work. We compare our method with, FRCNN+Rnd, FRCNN+SF, Hiera, StillFast, VideoMAE, and MAE-ST.
-            </p>
-        </div>
-
-        
-
-        <!-- Figure with caption in the style of the template -->
-        <div style="float: right; width: 100%; margin-left: 20px; margin-bottom: 20px;">
-            <img src="assets/figures/exp1.png" style="width: 100%;">
-            <p class="caption">
-                <b>Probing Across Layers, Models, and Tasks:</b> We study the behavior of our models across multiple layers and tasks. For image classification, action recognition, and object tracking, all the models behave similarly and peak around 50% of the model depth. This behavior is observed across all model sizes. Robot tasks show a different behaviour, where the middle layers perform good at picking the object, last layers also perform good as middle layers.
-            </p>
-        </div>
-
-        <div style="float: right; width: 100%; margin-left: 20px; margin-bottom: 20px;">
-            <img src="assets/figures/exp2.png">
-            <p class="caption">
-                <b>Real-world Deployment:</b> We show an example episode of our policy performing the cube picking task on a Franka robot in the real world. We use toto-base to run the robot at real time, despite being a small model, toto was able to achieve about 63% success rate in real world setting.
-            </p>
-        </div>
-
-        <div style="float: right; width: 100%; margin-left: 20px; margin-bottom: 20px;">
-            <img src="assets/figures/exp3.png">
-            <p class="caption">
-                <b>Robot Manipulation Results:</b> We compare MAE-base with toto-base pre-trained models on robot manipulation. We evaluate each model the mean success rate over training steps. toto was able to learn these tasks faster than MAE, across two robots and two tasks.
-            </p>
-        </div>
-
-        <div style="float: right; width: 100%; margin-left: 20px; margin-bottom: 20px;">
-            <img src="assets/figures/exp4.png">
-            <p class="caption">
-                <b>Semi-Supervised Tracking:</b> We follow the protocol in STC, start with the GT segmentation mask, and propagate the labels using the features computed by toto-large. The mask was propagated up to 60 frames without losing much information.
-            </p>
-        </div>
-    </div>
-    
-
-
-    
-
-
-
-
-
-    <div class="container blog main first" id="limitations">
-        <h1>Limitations</h1>
-        
+    <div class="container blog main first" id="introduction2">
         <p class="text">
-            In this work, we introduced toto, for generative pre-training from videos. Despite its competitive performance, this approach has limitations. A significant limitation stems from the use of internet videos, which, unlike carefully curated datasets, introduces challenges related to data quality and diversity. This variance in data quality can impact model performance, especially when compared to models trained on more curated datasets.
+            In this paper, we argue that the answer is not necessarily one or the other and propose a direction that enjoys the advantages of both. Our idea is conceptually simple: given a pixel-based approach, we design mechanisms that can lead to desirable intermediate representations as <i>learned</i> latents. Specifically, our central insight is that 3D Gaussians are a good candidate for intermediate image representations.
         </p>
     
         <p class="text">
-            Another limitation is the use of tokenizer, this makes the learning not end-to-end, and the representation and generation quality is bounded by the quality of the tokenizer, and with quantized vectors, the quality is very much limited, this needs further explorations to build a universal visual tokenizer. Another fundamental limitation is training on videos for next token prediction task. The added redundancy in video frames, can hurt quality of the learned representations.
+            3D Gaussians were initially proposed for optimization-based 3D reconstruction. Different from geometrically uniform representations like square pixel patches, their size, location, and information distribution over the image are dynamically learned. Moreover, Gaussian-based representations could lend themselves to end-to-end learning thanks to splatting image rendering that maps them back to the pixel space. We can, therefore, jointly learn such a mid-level representation within self-supervised frameworks such as MAE. We name our approach Gaussian Masked Autoencoders, or GMAE. To the best of our knowledge, <i>we are the first to explore such Gaussian primitives in a visual representation learning framework</i>, rather than an optimization-based 3D reconstruction framework for single scenes. Our approach adds only a negligible overhead compared to standard MAE training -- the addition of splatting increases compute time by 1.5%. Without compromising representation-learning performance, GMAE gains significant wins in zero-shot capabilities.
         </p>
     
         <p class="text">
-            Additionally, our exploration of various design choices are based on ImageNet classification. While it does transfer to most of the tasks we considered in this paper, it may not be the optimal configuration for many other tasks.
+            Fig. 1 shows several built-in advantages of a Gaussian-based image representation. First, we note that the non-uniformity of the representation leads to a spatial distribution of representational density that correlates with the information density in the image. By allowing the 3D Gaussians to move along the z-axis, our model learns underlying structure of the natural world by observing not only the single viewpoint of one image but millions of such single views. As a result, we can find figure-ground segmentation, simple layering, and edge detection as depth discontinuity without any tuning.
         </p>
     
         <p class="text">
-            Furthermore, we have not yet fully assessed our method's effectiveness in dealing with dense prediction tasks, fine-grained recognition, or comprehending complex temporal dynamics over extended time frames. These areas represent key opportunities for further research, aiming to broaden the fruitfulness of generative pre-trained models.
-        </p>
-    </div>
-
-
-
-    <div class="container blog main first" id="conclusion">
-        <h1>Conclusion</h1>
-        
-        <p class="text">
-            We present an approach toto, for generative pre-training from videos. We build on prior work on generative pre-training from images and make architectural improvements to enable scaling to videos, including the use of quantized patch embeddings, relative position information. We curate a large video dataset and conduct a large-scale empirical study across a range of diverse tasks, including image recognition, video classification, object tracking, trajectory prediction, and robotic manipulation.
+            Besides these advantages, we show that the representations learned with GMAE perform similarly to MAE on image classification and object detection tasks. The representation quality improves with the number of Gaussians used. These results suggest GMAE <i>augments</i> MAE and can serve as a better alternative in applications that can benefit from using mid-level representations. The advantage of GMAE becomes apparent when considering that splatting-based rendering is highly efficient, and our current training is <i>almost as fast as</i> vanilla MAE baselines.
         </p>
     
         <p class="text">
-            We perform extensive ablation studies to understand different design choices and compare our approach to strong baselines across different tasks. We find that, despite minimal inductive biases, our approach achieves competitive performance across all tasks. Finally, we studied the scaling behaviours of visual next token prediction models, and showed it scales with compute, but at a slower rate than text based next token prediction models.
-        </p>
-    </div>
-
-    <div class="container blog main first" id="acknowledgments">
-        <h1>Acknowledgments</h1>
-        
-        <p class="text">
-            We thank Andrea Madotto, Po-Yao (Bernie) Huang, and Shiry Ginosar for helpful discussions. We're grateful to Ronghang Hu and Xinlei Chen for their help with TPU setup and code bases. We also thank Baifeng Shi for helping us with robots evaluations. We thank Valentin Gabeur and Neerja Thakkar for their valuable feedback on the paper.
+            We hope our exploration can inspire further research along this hybrid direction for representation learning: the reconstruction target is grounded to pixels while jointly learning effective mid-level representations for images. We believe it can contribute to the next generation of techniques for modeling high-fidelity visual data.
         </p>
     </div>
 
     <div class="container blog main">
+        <img src="assets/figures/gmae_1.png">
+        <p class="caption">
+            <b>Gaussian Masked Autoencoders (GMAE)</b> maintains high performance in supervised representation learning tasks such as classification, detection, and segmentation, but more importantly enables zero-shot capabilities. GMAE introduces a learned mid-level intermediate representation of 3D Gaussians that we train using pixel-based image reconstruction losses rather than direct supervision by rendering the Gaussians into pixel space. Through this reconstruction loss, the Gaussian collection learns to distribute non-uniformly in space and scale, dynamically following the input image's information density and high-frequency details. Having the degree of freedom in depth allows the model to learn the layering of objects and scenes, which enables figure-ground separation, layering, and edge detection without any training.
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container blog main first" id="approach">
+        <h1>Our Approach</h1>
+        
+        <p class="text">
+            Our model has a ViT-based encoder model, a lightweight decoder model, and a differentiable renderer. Fig. 2 shows a high-level overview of our method. For a given image, we first patchify it into $N$ patches and randomly mask them with a masking ratio $r$, resulting in $n$ visible patches. The ViT encoder model only sees the visible patches and encodes them from patches to latent embeddings, $x_i \in \mathcal{R}^{d_{enc}}, \ i \in \{1,2,3,...n\}$.
+        </p>
+    
+        <p class="text">
+            Assume the decoder has $k$ learnable query tokens $q_{j} \in \mathcal{R}^{d_{dec}}, j\in\{0,1,2,... k\}$. Note that $k$ can be any value irrespective of the number of masked tokens. We project the encoder latent to $\hat{x}_i \in \mathcal{R}^{d_{dec}}$ and concatenate it with the query tokens.
+        </p>
+    
+        <p class="text" style="text-align: center;">
+            $$X_{dec} = \{\hat{x}_i\}_{i=1}^n \cup \{q_j\}_{j=1}^k$$
+        </p>
+    
+        <p class="text">
+            The decoder sees the $X_{dec}$ tokens and predicts $k$ Gaussians, one for each query token (we discard the predictions for the latent tokens). Each Gaussian is parameterized by a 14-dimensional vector ${g}_{j} = \{{p}, {s}, {\phi}, {r}, {o}\} \in \mathcal{R}^{14}$.
+        </p>
+    
+        <p class="text">
+            Once we have $k$ predicted Gaussians, we splat them on a plane with a fixed camera projection and render the splatted Gaussians to generate an image. We limit the size of the Gaussians by using an effective scale $c \cdot \texttt{sigmoid}({s})$. Here, $c$ controls a Gaussian's maximum size. After rendering, we use a mean squared error loss to compare the reconstructed image with the input image on the originally masked pixels.
+        </p>
+    
+        <p class="text">
+            Note that since the Gaussians are the output of the decoder, they are effectively randomly initialized. This is in contrast to the typical usages of Gaussian splatting for 3D reconstruction that rely on point-cloud initialization. In this work, we do not use any prior knowledge. We directly learn all the Gaussian properties from reconstructing the image.
+        </p>
+    </div>
+
+
+
+
+    <div class="container blog main first" id="experiments">
+        <h1>Experiments</h1>
+        
+        <div style="width: 80%; text-align: justify; margin: 0 auto 20px auto;">
+            <div style="width: 100%; margin: 0 auto;">
+                <img src="assets/figures/exp5.png" style="width: 100%;">
+            </div>
+            <p class="caption">
+                <b>Ablation studies on different model space:</b> We ablate various configurations for pre-training, including <b>a)</b> the maximum allowed scale for a Gaussian, <b>b)</b> masking ratio at the encoder, and <b>c)</b> which loss is used for pre-training, from applying loss on all patches, only on masked patches to patch-normalized loss. We report classification performance on ImageNet, where higher is better.
+            </p>
+        </div>
+
+        <div style="width: 80%; text-align: justify; margin: 0 auto 20px auto;">
+            <div style="width: 100%; margin: 0 auto;">
+                <img src="assets/figures/exp6.png" style="width: 100%;">
+            </div>
+            <p class="caption">
+                <b>Evaluation on Standard Vision Tasks:</b> We evaluate our ViT-base model (pre-trained for 400 epochs, masking ratio 0.75) on ImageNet-1k classification and COCO object detection/segmentation. For ImageNet, we achieve comparable performance to MAE after 100-epoch fine-tuning, with performance improving as we increase the number of Gaussians. On COCO, toto matches MAE's performance in both AP$^\text{box}$ and AP$^\text{mask}$ metrics while significantly outperforming supervised pre-training.
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div style="width: 100%; text-align: justify; margin: 0 auto 20px auto;">
+            <div style="width: 100%; margin: 0 auto;">
+                <img src="assets/figures/exp1.png" style="width: 100%;">
+            </div>
+            <p class="caption">
+                <b>Visualization of Gaussian layers:</b> The first column shows the RGB input image, and the subsequent columns show the Gaussian layers in inverse-depth ordering. The layer-wise rendering highlights the model's ability to separate objects and represent them in distinct frequency layers, enabling zero-shot foreground-background segmentation and edge detection.
+            </p>
+        </div>
+
+
+        <div style="width: 100%; text-align: justify; margin: 0 auto 20px auto;">
+            <div style="width: 100%; margin: 0 auto;">
+                <img src="assets/figures/exp2.png" style="width: 100%;">
+            </div>
+            <p class="caption">
+                <b>Visualization of Gaussian layers on RGB:</b> The first column shows the RGB input image, and the rest of the columns show rendering of partial depth Gaussians. We select first $K$ Gaussians from all the Gaussians after sorting based on depth. Then we only render these $K$ Gaussians. The Figure shows $K=32$, $64$, $128$, $256$, $512$, $1024$, and the last being fully rendered image using all Gaussians.
+            </p>
+        </div>
+
+
+
+        <div style="width: 100%; text-align: justify; margin: 0 auto 20px auto;">
+            <div style="width: 100%; margin: 0 auto;">
+                <img src="assets/figures/exp3.png" style="width: 100%;">
+            </div>
+            <p class="caption">
+                <b>Zero-shot edge detection:</b> Gaussians from our decoder are grouped into equal sets of layers, based on their depth ordering. Then we render each layer one by one and update the pixel if adding that layer makes significant change in that pixel. From this layered image, we simply find edges if there is a discontinuity from one layer to another. We can get a hierarchy of edges by decreasing the number of layers (or increasing the width of a layer). These results are on BSDS500. $l@16$ means we have a total of 16 uniformly grouped layers.
+            </p>
+        </div>
+
+
+
+
+        <div style="width: 100%; text-align: justify; margin: 0 auto 20px auto;">
+            <div style="width: 100%; margin: 0 auto;">
+                <img src="assets/figures/exp4.png" style="width: 100%;">
+            </div>
+            <p class="caption">
+                <b>Distribution of Gaussians on xy-plane:</b> We plot the xy position of Gaussian centers along with their opacity values. Unlike patches, Gaussians are positioned dynamically based on the image. For example, in the 4th image, Gaussians are arranged in a circular pattern, while in the 2nd image there arranged as a rectangle. This degree of freedom allows them to add high-frequency signals to the image, by concentrating more Gaussians to those regions.
+            </p>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <div class="container blog main first" id="discussion">
+        <h1>Discussion</h1>
+        
+        <p class="text">
+            This paper presents GMAE, a self-supervised image representation learning approach that extends MAE to include a learned intermediate Gaussian representation. We show that learning to represent images with 3D Gaussians has several built-in advantages that stem from their non-uniform dynamical allocation of scale, location, and distribution. Our method, therefore, lends itself to zero-shot capabilities such as foreground-background segmentation, image layering, and edge detection. Along with these advantages, we demonstrate that the representation learned by our method is on par with MAE on standard supervised image recognition tasks and that it transfers to downstream tasks such as detection and segmentation via fine-tuning.
+        </p>
+    
+        <p class="text">
+            GMAE still exhibits several empirical limitations. For example, setting larger scale values at the start of training results in a more challenging optimization. Compared to the number of Gaussians typically used for 3D reconstructions (up to millions), the number of Gaussians we have used in GMAE is bottlenecked by compute, and increasing it to more than a thousand can cause major slow-downs for pre-training. An interesting future direction is to further accelerate our pipeline.
+        </p>
+    
+        <p class="text">
+            Nonetheless, we have shown that one no longer has to choose between pixels and latent representations for visual modeling. We hope our exploration can inspire more work in this direction and truly unlock the next generation of techniques that effectively model visual data.
+        </p>
+    </div>
+
+    
+    <div class="container blog main">
         <h1>Citation</h1>
-        <pre><code class="plaintext">@article{autoregressive,
+        <pre><code class="plaintext">@article{gmae,
             title={Autoregressive Pre-training from Videos},
-            author={Jathushan Rajasegaran, Ilija Radosavovic, Rahul Ravishankar, Yossi Gandelsman, Christoph Feichtenhofer,  Jitendra Malik},
+            author={Jathushan Rajasegaran, Xinlei Chen, Rulilong Li, Christoph Feichtenhofer,  Jitendra Malik, Shiry Ginosar},
             year={2024}
         }</code></pre>
     </div>
