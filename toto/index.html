@@ -115,9 +115,8 @@
         </p> -->
 
         <p class='text'>
-        We propose a method for generative pre-training from videos. We build 
-        <b>toto: Token to Token Video Models</b> with 
-        necessary architectural changes to enable scaling to videos, inspired from iGPT. Figure below shows our overall framework, we use multiple data sources, such as internet style exocentric videos, egocentric videos, and images to pre-train our models. Our pre-training objective is simple and follows language modeling, by predicting the next token. We then evaluate our models on various downstream tasks and show that generative video pre-training can lead to strong representations, for image, video understanding, and robot manipulation tasks. 
+            In this paper, we empirically study autoregressive pre-training from videos. To perform our empirical study, we construct a family of autoregressive video models which we call <b>Toto</b>. We treat videos as sequences of visual tokens and train a causal transformer models on next-token prediction task. 
+We use causal transformer model with LLaMa architecture. We use  dVAE to tokenize frames into discrete tokens. Treating videos as sequences of tokens enables us to jointly train on videos and images using a unified format. We construct a diverse dataset of videos and images comprising over 1 trillion visual tokens. Our models are first pre-trained on this data and then evaluated on downstream tasks. We extract visual representations using attention pooling from relevant layers of the model.
         </p>
 
         <!-- <p class='text'>
