@@ -100,15 +100,16 @@
         <h1>Introduction</h1>
     
         <p class="text">
-            Building on top of text tokens, generative language modeling has been tremendously successful in recent years. But what might good tokens for modeling visual data be? Plain pixels? Patches? Learned primitives? Computer vision systems, by nature, process raw, low-level observations of the world, but intelligent visual reasoning frequently requires higher-level semantic abstractions of the data. How can we effectively address this abstraction gap?
+            Vision systems, by nature, process raw, low-level observations of the world, but visual reasoning frequently requires spatial understanding as well as higher-level semantic abstractions of the data. In this work, we aim to learn the structure of the world, which is constructed from objects and their relationships in 3D space. We learn these abstractions from raw image observations by learning masked auto-encoders controlled by 3D Gaussians as their intermediate representations.
         </p>
     
         <p class="text">
-            One way is via learned latent representations. A great example is from image synthesis, where popular frameworks such as diffusion and auto-regressive models have shifted from directly operating on pixels to operating on latent spaces. Such latents serve as <i>mid-level representations</i> with desired properties (e.g., discreteness or compactness). Operating on latent spaces allows subsequent stages of learning to concentrate on higher-level tasks.
+            What sort of spatial understanding does visual reasoning require? In this work, we take inspiration from Wang and Adelson, who demonstrated that the simplest version of a spatially-aware representation consisting of 2.1D layers is sufficient for representing objects that inherently move with respect to one another. Even in static images, layered representations allow us to learn more about the structure of the world. We, therefore, set ourselves the task of learning image representations that are both layered and at the level of abstraction of single objects.
         </p>
     
         <p class="text">
-            Self-supervised learning frameworks in vision, in particular ones that learn by <i>reconstruction</i>, have also investigated heavily into this important question. However, while initial efforts have tapped different tokens such as VAE or manually designed features, Masked Autoencoders (MAE) demonstrated that representation learning could be just as effective by directly predicting the RGB values of masked patches. By directly predicting pixels, MAE enjoys both <i>simplicity</i> -- no complication in staged training or dependence on external models, and <i>end-to-end optimizability</i> -- a fundamental idea that underpins the success of deep learning.
+            Learning high-level semantic abstractions can be achieved by supervised learning or by learning binding from large scale paired datasets. However, self-supervised learning has recently emerged as the more promising approach in this direction. Notably, Masked Autoencoders (MAE) demonstrated that self-supervised learning is an effective representation learning mechanism by directly predicting the RGB values of masked image patches. 
+            However, while the leading methods, such as MAE and DINO, learn higher-level representations of images, they are not trained for explicitly recovering the spatial structure of objects and scenes in the world.
         </p>
     </div>
       
@@ -123,7 +124,7 @@
     
     <div class="container blog main first" id="introduction2">
         <p class="text">
-            In this paper, we argue that the answer is not necessarily one or the other and propose a direction that enjoys the advantages of both. Our idea is conceptually simple: given a pixel-based approach, we design mechanisms that can lead to desirable intermediate representations as <i>learned</i> latents. Specifically, our central insight is that 3D Gaussians are a good candidate for intermediate image representations.
+            This paper proposes jointly learning high-level semantic abstractions such as objectness, grouping, and semantic structure with 2.1D layering via self-supervised learning. Our idea is conceptually simple: given MAE, a pixel-based self-supervised representation learning approach, we design mechanisms that can lead to desirable intermediate representations as learned latents. Specifically, our central insight is that 3D Gaussians are a good candidate for intermediate image representations that can lead to semantic and spatial understanding.
         </p>
     
         <p class="text">
@@ -139,7 +140,7 @@
         </p>
     
         <p class="text">
-            We hope our exploration can inspire further research along this hybrid direction for representation learning: the reconstruction target is grounded to pixels while jointly learning effective mid-level representations for images. We believe it can contribute to the next generation of techniques for modeling high-fidelity visual data.
+            We hope our exploration can inspire further research along this hybrid direction for representation learning: the reconstruction target is grounded to pixels while jointly learning effective high-level semantic abstractions and spatial understanding with mid-level representations for images. We believe it can contribute to the next generation of techniques for modeling high-fidelity visual data.
         </p>
     </div>
 
