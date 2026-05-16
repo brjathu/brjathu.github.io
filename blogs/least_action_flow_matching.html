@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>From Fermat to Flow Matching | Jathushan Rajasegaran</title>
+  <meta name="author" content="Jathushan Rajasegaran">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How the principle of least action travels from optics and mechanics into the structure of modern generative modeling.">
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  <link rel="icon" type="image/png" href="../images/seal_icon.png">
+  <script>
+    window.MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }, svg: { fontCache: "global" } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body class="blog-page">
+  <main class="blog-shell">
+    <nav class="blog-nav">
+      <a href="../index.html">Jathushan Rajasegaran</a>
+      <a href="../index.html#writing">Writing</a>
+    </nav>
+
+    <article class="blog-article">
+      <header class="blog-hero">
+        <p class="blog-eyebrow">Machine learning</p>
+        <h1>From Fermat to Flow Matching</h1>
+        <p class="blog-subtitle">A three-hundred-year path through least action</p>
+      </header>
+
+      <div class="blog-content">
+<p><em>Jathushan Rajasegaran — UC Berkeley</em></p>
+<h2>1. A puzzle about bending light</h2>
+<p>In 1662, Pierre de Fermat was thinking about a peculiar fact: when light passes from air into water, it bends. The angle of bending obeys a simple rule — Snell's law — that had been known empirically for decades. But Fermat asked a different question: <em>why</em> this rule? What was the light <em>doing</em>?</p>
+<p>His answer was strange and beautiful. Light, he proposed, picks the path that takes the <strong>least time</strong>. Not the shortest path — the <em>fastest</em> one. In air, light moves quickly; in water, more slowly. To get from a point above the surface to a point below, the straight-line path is the shortest, but the <em>quickest</em> path bends at the surface, spending more time in fast air and less in slow water. Work out the geometry, and Snell's law falls out exactly.</p>
+<p>It was a strange thing to say. Light, somehow, was <em>choosing</em>. Every photon, before setting out, seemed to survey all possible routes and pick the cheapest one. Fermat himself was uncomfortable with the metaphysics; his contemporaries were worse. But the rule worked.</p>
+<p>What no one in 1662 could have guessed is that Fermat had stumbled onto something far larger than optics. The idea that nature picks the cheapest path would, over the next three hundred years, eat physics whole — mechanics, electromagnetism, general relativity, quantum field theory. And, eventually, it would give us a way to derive a 2023 machine learning algorithm from first principles.</p>
+<p>This post is about that arc. About how a single idea — <em>nature optimizes</em> — connects a 17th-century optics puzzle to <strong>flow matching</strong>, the technique used to train modern generative models. We will walk the historical thread quickly, then watch flow matching fall out of the same machinery that Lagrange and Hamilton built for mechanics. The math is well-known to specialists; the view, I think, is worth sharing.</p>
+<h2>2. Maupertuis and his thrifty universe</h2>
+<p>Eighty years after Fermat, in 1744, Pierre Louis Maupertuis took the principle and made it cosmic.</p>
+<p>Maupertuis was president of the Berlin Academy, a favorite of Frederick the Great, and a man whose ambitions ran ahead of his mathematics. In a paper titled <em>Accord de différentes lois de la nature qui avaient jusqu'ici paru incompatibles</em> — &quot;Agreement of different laws of nature that had hitherto appeared incompatible&quot; — he proposed that Fermat's principle wasn't just about light. It was a universal law. Everything in nature, everywhere, picks the path of least <strong>action</strong>.</p>
+<p>What was &quot;action&quot;? Maupertuis was vague. He defined it as something like $\int m v \, ds$ — mass times velocity, integrated along the path. It worked for some examples and failed for others, but the <em>vision</em> was clear: God had built a thrifty universe. &quot;Nature, in producing its effects, always uses the simplest means.&quot;</p>
+<p>This was, to put it gently, controversial. Maupertuis got into a vicious priority dispute with followers of Leibniz, who claimed the idea had been Leibniz's all along. Voltaire — never one to miss a fight — wrote a satirical pamphlet, the <em>Diatribe du Docteur Akakia</em>, that mocked Maupertuis mercilessly. Frederick the Great, defending his Academy president, had copies of the pamphlet publicly burned in the streets of Berlin. The whole affair was a mess.</p>
+<p>But Maupertuis had the right <em>vision</em>, even when he didn't have the right math.</p>
+<h2>3. Euler does the math</h2>
+<p>The math came, quietly, the same year. Leonhard Euler — in the middle of writing what would become one of the most influential textbooks in the history of mathematics, <em>Methodus inveniendi lineas curvas</em> — included an appendix that did, rigorously, what Maupertuis had been waving at.</p>
+<p>Euler showed that for a particle moving in a potential field, the quantity $\int v \, ds$ is extremized along the actual trajectory. He gave Maupertuis credit for the idea but did the work. This is a pattern that repeats: Maupertuis announced, Euler proved.</p>
+<p>More importantly, Euler invented the tool that made it all possible: the <strong>calculus of variations</strong>. Hand him a quantity that depends on a path, and he hands back a differential equation whose solutions are the extremal paths. The Euler equation — what we now call the Euler–Lagrange equation — turns the philosophical claim &quot;nature optimizes&quot; into a computational procedure.</p>
+<p>Suddenly, &quot;least action&quot; wasn't a slogan. It was a method.</p>
+<h2>4. Lagrange and the analytical machine</h2>
+<p>Then came Lagrange.</p>
+<p>In 1788, Joseph-Louis Lagrange published <em>Mécanique analytique</em>, a book famous for, among other things, its preface, where he boasted: &quot;No diagrams will be found in this work.&quot; Lagrange was determined to reformulate all of mechanics — Newton's laws, planetary motion, vibrating strings, the lot — without recourse to geometric intuition. Just calculus, just symbols.</p>
+<p>His central claim was this: for any mechanical system, write down a single function $L = T - V$, where $T$ is the kinetic energy and $V$ is the potential energy. Then the actual motion is the one that extremizes</p>
+<p>$$S = \int_{t_0}^{t_1} L\, dt.$$</p>
+<p>That's it. Newton's $F = ma$, the orbits of planets, the swing of a pendulum — all of it follows by varying this single integral. The machinery is <em>the same</em> for every problem. You write down $L$, you crank the Euler–Lagrange equation, you get the equation of motion.</p>
+<p>This is the moment when &quot;nature is thrifty&quot; becomes industrial. Lagrange's framework would, over the next two centuries, be applied to every physical system anyone could think of. It is, without exaggeration, one of the most powerful ideas in the history of science.</p>
+<h2>5. Hamilton sees the deep structure</h2>
+<p>In the 1830s, William Rowan Hamilton — Irish, prodigy, troubled, brilliant — looked at Lagrange's mechanics and noticed something strange.</p>
+<p>The equations he was writing down for a particle in a potential looked, mathematically, like the equations for the propagation of <em>light</em> through a medium with varying refractive index. The trajectories of particles and the rays of light obeyed the same kind of equation. There was an analogy between mechanics and optics that ran far deeper than anyone had suspected.</p>
+<p>Hamilton's response was to reformulate mechanics yet again, this time in a way that made the optics–mechanics analogy structural. He introduced what we now call the <em>Hamiltonian</em> (the energy, expressed in terms of position and momentum) and a function $\phi(x, t)$ whose gradient gave the momentum field. The wavefronts of this function evolved according to a partial differential equation now called the <strong>Hamilton–Jacobi equation</strong>:</p>
+<p>$$\partial_t \phi + \frac{1}{2}|\nabla \phi|^2 + V(x) = 0.$$</p>
+<p>This is the equation we will meet again, in a moment, in a context Hamilton could not have imagined.</p>
+<p>(Worth noting: it was the Hamilton–optics analogy that, ninety years later, gave Schrödinger the idea for wave mechanics. If classical mechanics is like geometric optics, and geometric optics is the high-frequency limit of wave optics, then maybe <em>mechanics</em> is the high-frequency limit of some deeper wave theory. That deeper theory turned out to be quantum mechanics. Hamilton's analogy ran very deep indeed.)</p>
+<h2>6. Feynman makes it total</h2>
+<p>Skip to 1948. Richard Feynman, in his PhD thesis and the papers that followed, proposes that quantum mechanics itself can be reformulated as a least action principle — with a twist.</p>
+<p>In Feynman's version, a quantum particle does not pick a single path. It takes <em>all</em> of them. Each path contributes a complex number, $e^{iS/\hbar}$, where $S$ is the classical action of that path. The amplitudes interfere. In the limit where $\hbar$ is small compared to $S$ — that is, for macroscopic objects — the interference is sharply peaked around the path of stationary action. That's the classical path. Newton's $F = ma$ is what you see when quantum interference picks out one trajectory from infinity.</p>
+<p>This is the final form of the principle: not &quot;nature picks the least action path&quot; but &quot;nature sums over all paths, weighted by action.&quot; Classical mechanics is the limit where the sum collapses to a single trajectory.</p>
+<p>By 1948, the arc is complete. Three hundred years after Fermat, every fundamental physical theory we have — classical mechanics, electromagnetism, general relativity, quantum field theory — is written as a least action principle. You pick an action functional, you extremize (or sum over paths), you get the physics.</p>
+<p>The question that animates the rest of this post is: <em>why stop at physics?</em></p>
+<h2>7. The pivot</h2>
+<p>Here is the move.</p>
+<p>In every example we just walked through — Fermat's light ray, Lagrange's pendulum, Hamilton's wavefronts, Feynman's quantum paths — the <em>configuration</em> that evolves in time is a point, a field, or an amplitude. But the machinery doesn't care. The calculus of variations works on any space of paths. The configuration could be anything that changes in time, as long as we can write down a kinetic energy, a potential, and a meaningful integral.</p>
+<p>So: what if the configuration is a <strong>probability distribution</strong>?</p>
+<p>What if we have a density $p(x, t)$ that evolves from $p_0(x)$ at $t = 0$ to $p_1(x)$ at $t = 1$, and we want to know: which evolution is the &quot;right&quot; one? Which one would Maupertuis pick?</p>
+<p>This is not an idle question. It is exactly the setting of <strong>flow matching</strong>, the technique that underlies a large fraction of modern generative AI — from rectified flows to the velocity-field training objectives at the heart of Stable Diffusion 3 and many of its successors. In flow matching, we transport mass from a simple distribution (say, a Gaussian) to a complex one (say, the distribution of photographs of cats) by following a learned velocity field $v(x, t)$. The density evolves according to the <strong>continuity equation</strong>:</p>
+<p>$$\partial_t p + \nabla \cdot (p\, v) = 0,$$</p>
+<p>which is just the statement that probability mass is neither created nor destroyed — it only flows.</p>
+<p>There are infinitely many velocity fields $v$ that transport $p_0$ to $p_1$. Which one should we pick?</p>
+<p>If we are willing to follow Maupertuis — and three hundred years of physics — the answer should be: <em>the one that minimizes some action.</em></p>
+<h2>8. Writing down the action</h2>
+<p>Let's build it.</p>
+<p>What is the kinetic energy of a flowing probability distribution? If we think of the density as a continuum of particles, each at position $x$ with velocity $v(x, t)$ and weighted by the density $p(x, t)$, then the total kinetic energy is</p>
+<p>$$T \;=\; \frac{1}{2} \int p(x, t)\, |v(x, t)|^2 \, dx.$$</p>
+<p>This is the natural choice. It is, literally, the kinetic energy of all the moving probability mass. No magic.</p>
+<p>For the potential, we have more freedom. In ordinary mechanics, $V(x)$ encodes forces — gravity, springs, electric fields. For probability distributions, what plays the role of a force? A natural choice is a term that pulls the distribution toward (or away from) some reference distribution $p_{\text{ref}}(x, t)$:</p>
+<p>$$U \;=\; \lambda \int p(x, t)\, \log \frac{p(x, t)}{p_{\text{ref}}(x, t)} \, dx.$$</p>
+<p>This is the <strong>Kullback–Leibler divergence</strong>, weighted by a coupling constant $\lambda$. When $\lambda = 0$, there is no potential; we just minimize kinetic energy. When $\lambda$ is large, the distribution is strongly attracted toward $p_{\text{ref}}$.</p>
+<p>The total action is then</p>
+<p>$$S \;=\; \int_0^1 \! \int \left[\,\tfrac{1}{2}\, p\, |v|^2 \;+\; \lambda\, p \log \frac{p}{p_{\text{ref}}}\,\right] dx\, dt.$$</p>
+<p>We are free to choose $p_{\text{ref}}$ — it is the &quot;potential landscape&quot; of our probability flow. Different choices, as we will see, recover different generative-modeling regimes.</p>
+<p>But there is a constraint. The density $p$ and the velocity $v$ are not independent — they are linked by the continuity equation. Following Lagrange, we enforce the constraint with a Lagrange multiplier $\phi(x, t)$ and minimize the augmented action</p>
+<p>$$S \;=\; \int_0^1 \! \int \left[\, \tfrac{1}{2}\, p\, |v|^2 \;+\; \lambda\, p \log \frac{p}{p_{\text{ref}}} \;+\; \phi \big(\partial_t p + \nabla \!\cdot\! (p\, v)\big) \,\right] dx \, dt.$$</p>
+<p>This is now a problem Lagrange would have recognized: a single functional, three fields to vary over ($p$, $v$, $\phi$), and a familiar machinery to crank.</p>
+<h2>9. Cranking the machine</h2>
+<p><strong>Vary with respect to $v$.</strong> The $v$-dependent terms are $\tfrac{1}{2}\, p\, |v|^2$ and $\phi\, \nabla \!\cdot\! (p\, v)$. The latter, after integration by parts, becomes $-p\, \nabla \phi \cdot v$. Setting the variation to zero:</p>
+<p>$$p\, v \;-\; p\, \nabla \phi \;=\; 0 \quad\Longrightarrow\quad \boxed{\,v \;=\; \nabla \phi.\,}$$</p>
+<p>This is already remarkable. The optimal velocity field is a <strong>gradient</strong> — the velocity of the probability flow is the gradient of the Lagrange multiplier. Just as in Hamilton's mechanics, where the momentum is the gradient of an action function, here the velocity is the gradient of $\phi$. The mathematical structure is identical.</p>
+<p><strong>Vary with respect to $p$.</strong> The $p$-dependent terms are $\tfrac{1}{2}\, p\, |v|^2$, $\lambda\, p \log(p / p_{\text{ref}})$, and the $\phi$-coupled terms $\phi\, \partial_t p$ and $\phi\, \nabla \!\cdot\! (p\, v)$. After integrating by parts (in time for the first $\phi$ term, in space for the second) and setting the variation to zero, we obtain</p>
+<p>$$\tfrac{1}{2} |v|^2 \;+\; \lambda \left(\log \frac{p}{p_{\text{ref}}} + 1\right) \;-\; \partial_t \phi \;-\; |\nabla \phi|^2 \;=\; 0.$$</p>
+<p>Substituting $v = \nabla \phi$ and rearranging:</p>
+<p>$$\boxed{\;\partial_t \phi \;+\; \tfrac{1}{2}\, |\nabla \phi|^2 \;=\; \lambda \left(\log \frac{p}{p_{\text{ref}}} \;+\; 1\right).\;}$$</p>
+<p>Stop and look at this equation. It is the <strong>Hamilton–Jacobi equation</strong>, with a potential on the right-hand side that depends on the density itself. Hamilton wrote down this equation in 1834 for a particle in a potential field. Here it is again, almost two centuries later, governing the evolution of $\phi$ in a probability flow.</p>
+<p><strong>Vary with respect to $\phi$.</strong> This simply gives back the continuity equation. So our complete dynamics are:</p>
+<p>1. The velocity is the gradient of a potential: $\;v = \nabla \phi.$ 2. The potential evolves by a modified Hamilton–Jacobi equation: $\;\partial_t \phi + \tfrac{1}{2} |\nabla \phi|^2 = \lambda\, \big(\log (p / p_{\text{ref}}) + 1\big).$ 3. The density evolves by continuity: $\;\partial_t p + \nabla \!\cdot\! (p\, \nabla \phi) = 0.$</p>
+<p>Three coupled equations, three unknowns, all derived from a single action principle. Hamilton would have smiled.</p>
+<h2>10. The knob</h2>
+<p>The parameter $\lambda$ is a knob. Turning it sweeps us through a family of generative-modeling problems that, at first glance, look unrelated but are revealed by the action principle to be the same thing with different settings.</p>
+<p><strong>$\lambda = 0$ — Optimal transport.</strong> With no potential, the action is pure kinetic energy. We are asking: <em>what is the least-effort way to transport mass from $p_0$ to $p_1$?</em> This is the <strong>Benamou–Brenier</strong> formulation of optimal transport, written down in 2000 and the cornerstone of modern Wasserstein geometry. The Hamilton–Jacobi equation collapses to $\partial_t \phi + \tfrac{1}{2}|\nabla \phi|^2 = 0$ — exactly Hamilton's equation for a free particle. The optimal flows are <em>geodesics</em> in Wasserstein space: straight lines, in a suitable sense, between distributions.</p>
+<p><strong>$\lambda &gt; 0$, $p_{\text{ref}}$ uniform — Entropic optimal transport.</strong> The KL term collapses to negative entropy. We now want transport that is cheap <em>and</em> keeps the distribution spread out. This is the regime studied by Cuturi, Peyré, and many others. Entropic OT has been the workhorse of computational optimal transport for the past decade.</p>
+<p><strong>$\lambda &gt; 0$, $p_{\text{ref}}$ the law of Brownian motion — Schrödinger bridges.</strong> This is the most beautiful special case. The <strong>Schrödinger bridge</strong> problem, posed by Erwin Schrödinger in 1931, asks: given a prior diffusion (say, Brownian motion) and observed densities at two endpoints, what is the most likely path the system took between them? The answer turns out to be precisely a flow of the form we just derived, with $p_{\text{ref}}$ taken as the law of Brownian motion. And — this is the punchline — the Schrödinger bridge is the cleanest mathematical link between flow matching and <strong>score-based diffusion models</strong>. When De Bortoli and collaborators framed score-based diffusion in 2021 as a diffusion Schrödinger bridge, they were really showing that diffusion models live at a particular point on our $\lambda$-dial.</p>
+<p><strong>$\lambda \to \infty$ — The static limit.</strong> The kinetic term becomes negligible. The distribution just follows $p_{\text{ref}}$, ignoring the endpoints. Uninteresting, but instructive: it tells you that $\lambda$ trades off &quot;follow the reference&quot; against &quot;actually move mass to where we want it to end up.&quot;</p>
+<p>| $\lambda$ | $p_{\text{ref}}$ | Regime | |---|---|---| | $0$ | — | Optimal transport (Benamou–Brenier) | | $&gt;0$ | uniform | Entropic OT | | $&gt;0$ | Brownian motion | Schrödinger bridge ≈ score-based diffusion | | $\to \infty$ | any | Pure reference (static limit) |</p>
+<p>One action, one knob, four regimes. Optimal transport, entropic OT, Schrödinger bridges, and the static limit all fall out of the same variational principle by changing $\lambda$ and $p_{\text{ref}}$.</p>
+<p>This is what I meant in the opening by <em>unification</em>. The view from least action is not new mathematics — every one of these regimes has been derived and re-derived from its own angle, often by people who would not have framed their work in these terms. But it is, I think, the cleanest way to see how they fit together. Three hundred years after Maupertuis, the principle still has the power to make different-looking problems look the same.</p>
+<h2>11. Coda</h2>
+<p>There is something funny about all this.</p>
+<p>Maupertuis was, in many ways, wrong. He was wrong about the precise form of the action. He was wrong about the theology — the universe, as far as we can tell, was not designed to be efficient by anyone. He was wrong about Leibniz. He was bad at math and worse at politics. Voltaire was, by most accounts, basically right to mock him.</p>
+<p>But he was right about one thing, and it was a big thing.</p>
+<p>He was right that nature, <em>somehow</em>, picks the elegant path. That whenever something must change — light bending at the water's surface, a planet orbiting the sun, a quantum particle interfering with itself, a probability distribution morphing from noise into a photograph of a cat — there is a quantity, the action, that the change extremizes. He could not have anticipated what the configurations would turn out to be, or what the actions would look like, or that one of them would be a generative model running on a GPU. But he was right that the principle would generalize. He was right that <em>nature is thrifty in all its actions</em>.</p>
+<p>Flow matching, derived from least action, is the latest entry in a three-hundred-year list. It will not be the last.</p>
+<h2>A note on &quot;least&quot; versus &quot;stationary&quot;</h2>
+<p>A pedant's footnote, which physicists will demand: the principle is more accurately called the principle of <em>stationary</em> action. Most extrema of the action are saddle points, not minima. &quot;Least action&quot; persists as a name for historical reasons — Maupertuis really did want a minimum — and because in the simplest examples (a free particle, a geodesic) the action is genuinely minimized. Everything in this post goes through with &quot;stationary&quot; substituted for &quot;least&quot;; the rhetorical convenience of the older name is too good to give up.</p>
+<h2>Further reading</h2>
+<p>- <strong>Flow matching.</strong> Lipman, Chen, Ben-Hamu, Nickel, Le, <em>Flow Matching for Generative Modeling</em>, ICLR 2023. - <strong>Dynamic optimal transport.</strong> Benamou and Brenier, <em>A computational fluid mechanics solution to the Monge–Kantorovich mass transfer problem</em>, 2000. The original dynamical formulation that all of this descends from. - <strong>Schrödinger bridges.</strong> Léonard, <em>A survey of the Schrödinger problem and some of its connections with optimal transport</em>, 2014. The clearest modern survey. - <strong>Diffusion meets Schrödinger.</strong> De Bortoli, Thornton, Heng, Doucet, <em>Diffusion Schrödinger Bridge with Applications to Score-Based Generative Modeling</em>, NeurIPS 2021. - <strong>Optimal transport, the textbook.</strong> Villani, <em>Optimal Transport: Old and New</em>, Springer 2009. Heavy but the canonical reference. - <strong>The history.</strong> Yourgrau and Mandelstam, <em>Variational Principles in Dynamics and Quantum Theory</em> (Dover reprint, 1979), is the classic short history of least action from Fermat through Feynman.</p>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>

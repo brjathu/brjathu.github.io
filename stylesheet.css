@@ -134,6 +134,199 @@ span.highlight {
   font-size: 12px; /* Adjust the size as needed */
 }
 
+.writing-list {
+  display: grid;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.writing-item {
+  background: transparent;
+  border-left: 2px solid #e8e2d8;
+  padding: 4px 0 5px 11px;
+}
+
+.writing-item a {
+  color: #17202a;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.writing-item a:hover {
+  color: #8a4b21;
+}
+
+.writing-item p {
+  color: #5c6470;
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.blog-page {
+  background: #fbfaf7;
+  color: #20242a;
+  margin: 0;
+}
+
+.blog-shell {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 820px;
+  padding: 34px 22px 72px;
+}
+
+.blog-nav {
+  align-items: center;
+  border-bottom: 1px solid #e8e2d8;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 46px;
+  padding-bottom: 14px;
+}
+
+.blog-nav a {
+  color: #4e5763;
+  font-size: 13px;
+}
+
+.blog-nav a:hover {
+  color: #8a4b21;
+}
+
+.blog-article {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.blog-hero {
+  margin-bottom: 44px;
+}
+
+.blog-eyebrow {
+  color: #8a4b21;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.blog-hero h1 {
+  color: #171b20;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.blog-subtitle {
+  color: #606975;
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 16px 0 0;
+  max-width: 620px;
+}
+
+.blog-content {
+  border-top: 1px solid #e8e2d8;
+  padding-top: 30px;
+}
+
+.blog-content h2 {
+  color: #1b2026;
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 42px 0 14px;
+}
+
+.blog-content h2:first-child {
+  margin-top: 0;
+}
+
+.blog-content p {
+  color: #252b33;
+  font-size: 17px;
+  line-height: 1.78;
+  margin: 0 0 20px;
+}
+
+.tamil-kural {
+  background: #f3eee5;
+  border-left: 4px solid #9a6338;
+  margin: 24px 0 22px;
+  padding: 18px 22px;
+}
+
+.tamil-kural p {
+  color: #1e242b;
+  font-size: 20px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.blog-content strong {
+  color: #171b20;
+  font-size: inherit;
+}
+
+.blog-content em {
+  color: #4e5763;
+}
+
+.blog-content code,
+.math-block {
+  background: #f1eee8;
+  border-radius: 6px;
+  color: #243342;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+.blog-content code {
+  padding: 2px 5px;
+}
+
+.math-block {
+  line-height: 1.6;
+  margin: 24px 0;
+  overflow-x: auto;
+  padding: 14px 16px;
+}
+
+@media (max-width: 640px) {
+  .blog-shell {
+    padding: 24px 18px 56px;
+  }
+
+  .blog-nav {
+    margin-bottom: 34px;
+  }
+
+  .blog-hero h1 {
+    font-size: 32px;
+  }
+
+  .blog-subtitle {
+    font-size: 16px;
+  }
+
+  .blog-content p {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .tamil-kural {
+    padding: 15px 17px;
+  }
+
+  .tamil-kural p {
+    font-size: 18px;
+  }
+}
+
 
 
 

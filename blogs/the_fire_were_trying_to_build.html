@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>The Fire We're Trying to Build | Jathushan Rajasegaran</title>
+  <meta name="author" content="Jathushan Rajasegaran">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A short essay on static models, self-evolving AI, and the technical and alignment work needed to build systems that can safely learn.">
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  <link rel="icon" type="image/png" href="../images/seal_icon.png">
+  <script>
+    window.MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }, svg: { fontCache: "global" } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body class="blog-page">
+  <main class="blog-shell">
+    <nav class="blog-nav">
+      <a href="../index.html">Jathushan Rajasegaran</a>
+      <a href="../index.html#writing">Writing</a>
+    </nav>
+
+    <article class="blog-article">
+      <header class="blog-hero">
+        <p class="blog-eyebrow">AI systems</p>
+        <h1>The Fire We're Trying to Build</h1>
+        <p class="blog-subtitle">Toward self-evolving AI and the safeguards it demands</p>
+      </header>
+
+      <div class="blog-content">
+<p>Every dangerous technology humans have invented shares one property: it stays where you put it. A knife sits on the table. A warhead sits in a silo. Even a loaded gun does nothing until someone picks it up.</p>
+<p>Fire was different. Fire, once started, could spread and grow without any further human action. It was the first invention that had its own momentum. But fire also cooked our food, kept us warm, and gave us industry. We didn’t need to eliminate fire—we needed to understand it well enough to build hearths, furnaces, and engines.</p>
+<p>AI is becoming the next fire. And the question isn’t whether to light it, but whether we understand it well enough to build the hearth.</p>
+<h2>What We Have—and What’s Missing</h2>
+<p>Current AI systems, for all their capability, are fundamentally static. A model is trained, deployed, and frozen. It can be enormously useful in that frozen state—but it cannot grow. It cannot encounter a hard problem, struggle with it, and come back stronger. It processes; it does not learn.</p>
+<p>This matters because the problems we most want AI to solve—protein folding, climate modeling, the Navier–Stokes equations—are not the kind you solve by scaling up pattern matching on existing knowledge. They likely require new cognitive strategies, new internal representations: what mechanistic interpretability researchers would call new circuits. There is growing evidence that these circuits emerge specifically when models are pushed beyond their comfort zone on hard, low-frequency tasks—not from broader context, but from the weight updates themselves.</p>
+<p>Long context is memory. Weight updates are learning. And memory, no matter how large, is not a substitute for learning.</p>
+<h2>Three Tiers of AI</h2>
+<p>It helps to think about AI systems in three tiers, each separated by a qualitative leap.</p>
+<p>Tier 1 is what we have now: static models and agents. Think of everything a model knows as a sphere. The sphere is large, and we can prompt the model to navigate anywhere within it. But the boundary is fixed.</p>
+<p>Tier 2 is goal-directed self-evolution. We point the model at a specific hard problem—say, an unsolved conjecture in mathematics—and it doesn’t just attempt solutions. It explores intermediate lemmas, generates and tests new ideas, and updates its own weights based on what it discovers. The sphere expands, but only where we push it. This is not reinforcement learning in the conventional sense: the data and prompts are not predefined, only the goal is.</p>
+<p>Tier 3 is curiosity-driven self-evolution. The model identifies what it doesn’t know and decides, on its own, that this gap is worth filling. It doesn’t wait for us to define the problem. A professor once put it well: “Composing music like Bach isn’t intelligent. Wanting to compose music like Bach is intelligent.” Tier 3 is the wanting.</p>
+<p>Each tier is harder than the last—not just technically, but in terms of safety. A tier-2 system that solves the wrong problem wastes compute. A tier-3 system that pursues the wrong curiosity could be genuinely dangerous.</p>
+<h2>What It Would Take</h2>
+<p>Getting to tier 2 and beyond will require rethinking some of the foundations we currently take for granted. The way we train models today is essentially a one-shot process: learn once, deploy, freeze. Making learning continuous means solving the problem of catastrophic forgetting—how a model can keep acquiring new knowledge without destroying what it already knows. That likely demands new optimization methods that go beyond gradient descent, architectures that can grow in capacity as they learn, and new ways of defining loss over long horizons and open-ended goals. None of these are incremental improvements on existing techniques; they are open research problems that may require fundamentally different approaches.</p>
+<h2>The Alignment Problem Gets Harder</h2>
+<p>Every tier makes alignment more difficult. With a static model, alignment is already hard, but at least the thing you aligned stays aligned—the weights don’t change after deployment.</p>
+<p>With a tier-2 system, the model is modifying its own internals in pursuit of a goal you gave it. How do you verify that a system whose weights are continuously shifting still respects the constraints you set? Your alignment guarantees become time-dependent.</p>
+<p>With tier 3, it is worse. The model is choosing its own goals. Even if its curiosity is initially well-calibrated—even if it starts by pursuing questions beneficial to humanity—you need confidence that self-modification will not gradually erode the values that made it safe in the first place.</p>
+<p>This is not a reason to stop. It is a reason to proceed carefully, with verification methods that can keep pace with systems that change.</p>
+<h2>What This Could Look Like</h2>
+<p>If we manage to build even a reliable tier-2 system—and that alone would be a profound achievement—the implications are staggering. Point it at drug discovery, give it a year, and perhaps it returns with a therapy we would not have found in a decade. Point it at materials science and maybe it finds a room-temperature superconductor. These are not superintelligent systems. They are systems that can learn on the job, which is something no current model can truly do.</p>
+<p>We do not need to solve everything at once. We do not need tier 3 tomorrow. But we need to start building the hearth—the optimization methods, the architectural patterns, the alignment frameworks—that would let us safely light a fire that learns.</p>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>
