@@ -310,6 +310,41 @@ span.highlight {
   padding: 14px 16px;
 }
 
+.more-posts {
+  border-top: 1px solid #e8e2d8;
+  margin-top: 42px;
+  padding-top: 22px;
+}
+
+.more-posts h2 {
+  color: #1b2026;
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.more-posts ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.more-posts li {
+  color: #8a8176;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.more-posts li span {
+  color: #252b33;
+}
+
+.more-posts li em {
+  color: #8a8176;
+  font-size: 12px;
+  font-style: normal;
+  margin-left: 5px;
+}
+
 @media (max-width: 640px) {
   .blog-shell {
     padding: 24px 18px 56px;
