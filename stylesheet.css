@@ -154,6 +154,13 @@ span.highlight {
   margin-bottom: 2px;
 }
 
+.writing-item span {
+  color: #8a8176;
+  font-size: 12px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
 .writing-item a:hover {
   color: #8a4b21;
 }
@@ -222,11 +229,18 @@ span.highlight {
   margin: 0;
 }
 
+.blog-date {
+  color: #8a8176;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 12px 0 0;
+}
+
 .blog-subtitle {
   color: #606975;
   font-size: 18px;
   line-height: 1.55;
-  margin: 16px 0 0;
+  margin: 10px 0 0;
   max-width: 620px;
 }
 
