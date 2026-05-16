@@ -244,6 +244,17 @@ span.highlight {
   max-width: 620px;
 }
 
+.blog-note {
+  background: #f3eee5;
+  border-left: 3px solid #d5c3ad;
+  color: #4d5662;
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 24px 0 0;
+  max-width: 660px;
+  padding: 14px 17px;
+}
+
 .blog-content {
   border-top: 1px solid #e8e2d8;
   padding-top: 30px;
@@ -325,6 +336,11 @@ span.highlight {
 
   .blog-subtitle {
     font-size: 16px;
+  }
+
+  .blog-note {
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .blog-content p {
