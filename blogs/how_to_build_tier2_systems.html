@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>How to Build Tier-2 Models | Jathushan Rajasegaran</title>
+  <meta name="author" content="Jathushan Rajasegaran">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A technical note on why Tier-2 AI systems need continual weight updates, expandable capacity, plasticity-aware optimizers, and closed data loops.">
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css?v=blog-20260521b">
+  <link rel="icon" type="image/png" href="../images/seal_icon.png">
+  <script>
+    window.MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }, svg: { fontCache: "global" } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body class="blog-page">
+  <main class="blog-shell">
+    <nav class="blog-nav">
+      <a href="../index.html">Jathushan Rajasegaran</a>
+      <a href="the_fire_were_trying_to_build.html">The Fire We're Trying to Build</a>
+    </nav>
+
+    <article class="blog-article">
+      <header class="blog-hero">
+        <p class="blog-eyebrow">Technical note</p>
+        <h1>How to Build Tier-2 Models</h1>
+        <p class="blog-date"><time datetime="2026-05">May 2026</time></p>
+        <p class="blog-subtitle">Expandable capacity, plasticity-aware learning, and verifier-grounded data loops</p>
+      </header>
+
+      <div class="blog-content">
+<p>The first question is why Tier-2 systems need weight updates at all. Why not simply give a model a longer context window and store every previous discovery there?</p>
+<p>At small scale, the answer is easy to see with lemmas. Suppose a model proves two lemmas and later needs to solve a harder theorem. A long context window can place the two lemmas in front of the model, but that only gives the model access to past results. A real learning system should do something stronger: it should compress those lemmas into a reusable proof strategy. It should change what kinds of moves the model is likely to try next.</p>
+<p>At large scale, the same point is even clearer. GPT-3 was not created by putting GPT-3’s training data into GPT-2’s context window. It was created by compressing more data and compute into a larger set of weights. That process did not merely store more facts; it created new circuits, abstractions, heuristics, and priors. A GPT-2-like model with GPT-3’s data in context would still be using GPT-2-level machinery to interpret that data. Context gives information; training changes the computation.</p>
+<p>We can loosely write a model as $y = f_{\theta}(x, c)$, where $x$ is the input, $c$ is the context, and $\theta$ is the model’s weights. Long context changes $c$. It can move the model’s behavior locally, temporarily, and conditionally. But Tier-2 learning requires changing $\theta$: compressing experience into durable internal structure. Context can tell a model what happened. Weight updates can change what the model has become.</p>
+<p>There is also a simple information-scale intuition. A 100B-parameter model stored in fp16 contains roughly $100\text{B} \times 16 = 1.6 \times 10^{12}$ bits of state. If a token comes from a $2^{16}$-sized vocabulary, then each token carries at most 16 bits of raw information. Matching the raw bit capacity of the weights would require on the order of $10^{11}$ tokens of context.</p>
+<p>This is already absurdly large. But even this understates the gap, because weights are not passive storage. They are compiled computation, reused on every forward pass. Context is a library the model must reread; weights are skills the model has already internalized.</p>
+<p>This connects to an interpretability view of neural networks as collections of sparse computational parts. Larger networks may become better not only because they store more facts, but because they learn more useful internal circuits, including rare and niche circuits that only activate in specialized situations. If this picture is right, then Tier-2 learning is not just about storing more memories. It is about creating, refining, and reusing new computational parts from verified experience.</p>
+<p>Once we accept that Tier-2 systems need continual weight updates, three design problems appear: architecture, optimizer, and data.</p>
+
+<h2>1. Architecture: Expandable Capacity</h2>
+<p>A fixed-size model can only absorb so much useful novelty before new skills begin to interfere with old ones. More samples alone do not necessarily require a bigger model. If the new samples are redundant, they mostly reduce uncertainty. But if the stream contains new tasks, new concepts, new modes, or new skills, then the effective complexity of what the model must represent increases.</p>
+<p>So Tier-2 models should not grow with raw data. They should grow with novelty-weighted data.</p>
+<p>Let $D_{\mathrm{eff}}(t)$ denote the amount of useful, non-redundant information the system has encountered by time $t$. A simple way to think about this is $D_{\mathrm{eff}}(t) = \sum_{\tau=1}^{t} n_{\tau}\nu_{\tau}$, where $n_{\tau}$ is the amount of data or experience at time $\tau$, and $\nu_{\tau}$ is a novelty coefficient. If a new task is redundant with what the model already knows, then $\nu_{\tau} \approx 0$. If it introduces genuinely new structure, then $\nu_{\tau} \approx 1$.</p>
+<p>In ordinary scaling-law language, the optimal parameter count grows with useful data: $P^{\star}(D) \propto D^{\beta/\alpha}$. For a fixed-depth dense model where parameters scale roughly like width squared, $P \propto w^2$, we get $w^{\star}(D) \propto D^{\beta/(2\alpha)}$. For continual learning, we replace raw data $D$ with novelty-weighted data $D_{\mathrm{eff}}(t)$, giving the rough intuition $w^{\star}(t) \propto D_{\mathrm{eff}}(t)^{\beta/(2\alpha)}$.</p>
+<p>This gives a simple principle: grow capacity according to useful novelty, not according to raw time or raw samples.</p>
+<p>Another way to say this is that every model has a finite data absorption capacity. A fixed model can keep improving while new data helps estimate structure it can already represent. But once the stream reveals more independent structure than the model can absorb, additional data creates interference. New skills compete with old skills. This is where forgetting begins.</p>
+<p>So a Tier-2 architecture should have a stable core and expandable capacity around it: new experts, adapters, paths, tools, or memory modules. Common skills can live in the core. Rare or domain-specific skills can live in sparse modules. As the system discovers new reusable skills, it can allocate new capacity and later distill the most important discoveries back into the core. In simple terms: new skill $\rightarrow$ new path/module $\rightarrow$ reuse or distill later.</p>
+<p>The expansion should not be linear with tasks. Many experiences should compress into fewer reusable circuits. A good Tier-2 system grows only when the stream increases the effective dimension of what must be represented.</p>
+<p>In short: continual learning turns scaling laws into time-dependent capacity laws.</p>
+
+<h2>2. Optimizer: Plasticity-Aware Learning</h2>
+<p>The optimizer cannot be myopic. Standard SGD asks: “Which update reduces the current loss?” But Tier-2 learning needs to ask: “Which update compresses new experience while preserving old capability?”</p>
+<p>A Tier-2 optimizer should control plasticity. Some weights should move quickly. Others should be protected. Some updates should go into temporary adapters or memory. Others should become permanent changes to the core model.</p>
+<p>We can think of an update as $\Delta \theta_t = -\eta_t P_t \nabla_{\theta}L_t$, where $P_t$ is not just a numerical preconditioner. It is a plasticity map. It decides which directions in weight space are safe, useful, and compressive.</p>
+<p>A Tier-2 optimizer should therefore be less myopic than standard SGD. It should not only ask whether an update reduces the current loss, but whether the update creates reusable structure. The right question is:</p>
+<p><em>If I move the model in this direction, does it compress many future experiences into a better internal circuit, or does it merely memorize the current batch?</em></p>
+<p>This suggests a different kind of preconditioning. The optimizer should estimate which directions in weight space correspond to durable skill formation, which directions interfere with older skills, and which discoveries should be routed into new modules instead of the core model. In other words, optimization should become a plasticity controller: deciding when to learn, where to learn, how much to learn, and when not to learn.</p>
+
+<h2>3. Data: From RL To Continual Learning</h2>
+<p>This is where Tier-2 separates from ordinary RL.</p>
+<p>In many current LLM RL setups, there is still a mostly fixed prompt distribution. The model samples rollouts, receives rewards, and updates the policy. That is already a weak form of continual learning because the next rollout comes from the updated model. But the outer problem is still mostly fixed: fixed prompt distribution, fixed reward model, fixed training setup.</p>
+<p>Tier-2 systems close the loop.</p>
+<p>They do not merely train on a provided prompt distribution. They generate their own curriculum. They decide what problem to attack next. They search for missing skills. They create new data. They may even write new filters, tests, simulators, or verifiers.</p>
+<p>The loop becomes: Goal $\rightarrow$ Generate tasks $\rightarrow$ Attempt solutions $\rightarrow$ Verify $\rightarrow$ Store $\rightarrow$ Distill $\rightarrow$ Update.</p>
+<p>This is no longer just RL on a fixed dataset of prompts. It is goal-directed continual learning.</p>
+<p>For example, a circuit-design Tier-2 system would not merely answer circuit prompts. It would generate harder design problems, synthesize candidate circuits, run timing, power, and area verification, store successful design patterns, train on verified traces, and update its own search policy.</p>
+<p>The key is verifier-grounded self-distillation. The model should not train on all of its own outputs. That would risk amplifying its own errors. Instead, it should train on outputs that survive external checks: proofs accepted by proof checkers, programs that pass tests, circuits that satisfy constraints, or scientific hypotheses that survive simulation and experiment.</p>
+
+<h2>Extreme Direction: Model As Read/Write Computation</h2>
+<p>A more radical direction is to move away from the pure feedforward view.</p>
+<p>Instead of treating the model as a fixed map from input tokens to output tokens, train it as a system that can choose how to read, compute, and write.</p>
+<p>The model receives an input. It can read from memory, call tools, run internal computation, write intermediate state, revise its plan, and decide what should be stored for future learning. The middle computation is not a fixed single forward pass. It is an adaptive process.</p>
+<p>In this view, the Tier-2 model is not simply input $\rightarrow$ model $\rightarrow$ output. It is closer to input $\rightarrow$ read $\rightarrow$ compute $\rightarrow$ write $\rightarrow$ verify $\rightarrow$ update.</p>
+<p>That may be the natural shape of self-improving systems. They need memory for fast adaptation, expandable architecture for new skills, optimizers that control plasticity, and data loops generated by their own goals.</p>
+<p>So the compressed thesis is this: Tier-2 AI requires turning experience into new internal computation. Long context can expose a model to more information, but weight updates compress that information into reusable circuits. To build Tier-2 systems, we need expandable architectures, plasticity-aware optimizers, and closed data loops where the model generates, verifies, distills, and learns from its own discoveries.</p>
+      </div>
+
+      <section class="more-posts">
+        <h2>Related Posts</h2>
+        <ul>
+          <li><a href="the_fire_were_trying_to_build.html">The Fire We're Trying to Build</a></li>
+          <li><a href="thirukkural_intelligence.html">What Thiruvalluvar Knew About Intelligence</a></li>
+          <li><a href="least_action_flow_matching.html">From Fermat to Flow Matching</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

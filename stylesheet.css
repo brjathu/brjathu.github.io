@@ -290,6 +290,14 @@ span.highlight {
   color: #4e5763;
 }
 
+.related-note {
+  background: #f3eee5;
+  border-left: 4px solid #9a6338;
+  color: #252b33;
+  margin: 24px 0 26px;
+  padding: 15px 18px;
+}
+
 .blog-content code,
 .math-block {
   background: #f1eee8;
@@ -301,6 +309,44 @@ span.highlight {
 
 .blog-content code {
   padding: 2px 5px;
+}
+
+.blog-figure {
+  background: #fbf8f2;
+  border: 1px solid #e4dbcf;
+  border-radius: 8px;
+  margin: 30px 0 36px;
+  padding: 18px 18px 14px;
+}
+
+.blog-figure svg {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.blog-figure figcaption {
+  color: #676057;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 12px 4px 0;
+}
+
+.figure-label {
+  fill: #8a4b21;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.figure-title {
+  fill: #1b2026;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.figure-note {
+  fill: #5f6872;
+  font-size: 13px;
 }
 
 .math-block {
@@ -373,6 +419,16 @@ span.highlight {
 
   .tamil-kural p {
     font-size: 18px;
+  }
+
+  .blog-figure {
+    margin: 26px 0 30px;
+    overflow-x: auto;
+    padding: 14px;
+  }
+
+  .blog-figure svg {
+    min-width: 560px;
   }
 }
 

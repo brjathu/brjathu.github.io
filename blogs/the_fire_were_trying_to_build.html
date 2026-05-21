@@ -7,7 +7,7 @@
   <meta name="author" content="Jathushan Rajasegaran">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A short essay on static models, self-evolving AI, and the technical and alignment work needed to build systems that can safely learn.">
-  <link rel="stylesheet" type="text/css" href="../stylesheet.css?v=blog-20260515b">
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css?v=blog-20260521b">
   <link rel="icon" type="image/png" href="../images/seal_icon.png">
   <script>
     window.MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }, svg: { fontCache: "global" } };
@@ -31,27 +31,51 @@
       </header>
 
       <div class="blog-content">
-<p>This started with the thought that AI might be the digital twin of fire. The invention of fire changed the trajectory of humanity; I wanted to think through how the birth of AGI or ASI could change our future in a similar way, and what kind of hearth we would need to build around it.</p>
+<p>This started with the thought that AI might be the digital twin of fire. The invention of fire changed the trajectory of humanity; I wanted to think through how the birth of AGI or ASI could change our future in a similar way, especially through self-improving models and continual learning systems.</p>
 <p>Every dangerous technology humans have invented shares one property: it stays where you put it. A knife sits on the table. A warhead sits in a silo. Even a loaded gun does nothing until someone picks it up.</p>
 <p>Fire was different. Fire, once started, could spread and grow without any further human action. It was the first invention that had its own momentum. But fire also cooked our food, kept us warm, and gave us industry. We didn’t need to eliminate fire—we needed to understand it well enough to build hearths, furnaces, and engines.</p>
-<p>AI is becoming the next fire. And the question isn’t whether to light it, but whether we understand it well enough to build the hearth.</p>
-<h2>What We Have—and What’s Missing</h2>
-<p>Current AI systems, for all their capability, are fundamentally static. A model is trained, deployed, and frozen. It can be enormously useful in that frozen state—but it cannot grow. It cannot encounter a hard problem, struggle with it, and come back stronger. It processes; it does not learn.</p>
-<p>This matters because the problems we most want AI to solve—protein folding, climate modeling, the Navier–Stokes equations—are not the kind you solve by scaling up pattern matching on existing knowledge. They likely require new cognitive strategies, new internal representations: what mechanistic interpretability researchers would call new circuits. There is growing evidence that these circuits emerge specifically when models are pushed beyond their comfort zone on hard, low-frequency tasks—not from broader context, but from the weight updates themselves.</p>
-<p>Long context is memory. Weight updates are learning. And memory, no matter how large, is not a substitute for learning.</p>
+<p>AI is becoming the next fire. The question is not whether to light it, but whether we understand it well enough to get the best of it and use it to benefit humanity.</p>
+<figure class="blog-figure">
+  <svg viewBox="0 0 720 210" role="img" aria-labelledby="fire-figure-title fire-figure-desc">
+    <title id="fire-figure-title">The shift from static models to self-improving systems</title>
+    <desc id="fire-figure-desc">A three step diagram showing static models, persistent agents, and self-improving systems.</desc>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 Z" fill="#8a4b21"></path>
+      </marker>
+    </defs>
+    <rect x="22" y="36" width="190" height="122" rx="8" fill="#f7f1e7" stroke="#dfd1bf"></rect>
+    <rect x="265" y="36" width="190" height="122" rx="8" fill="#eef3f0" stroke="#cddbd3"></rect>
+    <rect x="508" y="36" width="190" height="122" rx="8" fill="#f1eef6" stroke="#d8d0e3"></rect>
+    <path d="M222 97 H253" stroke="#8a4b21" stroke-width="2.5" marker-end="url(#arrowhead)"></path>
+    <path d="M465 97 H496" stroke="#8a4b21" stroke-width="2.5" marker-end="url(#arrowhead)"></path>
+    <text x="117" y="72" text-anchor="middle" class="figure-label">Tier 1</text>
+    <text x="117" y="101" text-anchor="middle" class="figure-title">Static model</text>
+    <text x="117" y="130" text-anchor="middle" class="figure-note">Answers, then stops</text>
+    <text x="360" y="72" text-anchor="middle" class="figure-label">Tier 2</text>
+    <text x="360" y="101" text-anchor="middle" class="figure-title">Goal-directed</text>
+    <text x="360" y="130" text-anchor="middle" class="figure-note">Learns toward a target</text>
+    <text x="603" y="72" text-anchor="middle" class="figure-label">Tier 3</text>
+    <text x="603" y="101" text-anchor="middle" class="figure-title">Curiosity-driven</text>
+    <text x="603" y="130" text-anchor="middle" class="figure-note">Chooses what to learn</text>
+  </svg>
+  <figcaption>Each tier adds more autonomy. The technical challenge is useful learning; the safety challenge is keeping that learning bounded.</figcaption>
+</figure>
 <h2>Three Tiers of AI</h2>
 <p>It helps to think about AI systems in three tiers, each separated by a qualitative leap.</p>
-<p>Tier 1 is what we have now: static models and agents. Think of everything a model knows as a sphere. The sphere is large, and we can prompt the model to navigate anywhere within it. But the boundary is fixed.</p>
+<p>Tier 1 is what we have now: static models and agents with harnesses. Think of everything a model knows as a sphere. The sphere is large, and we can prompt the model to navigate anywhere within it. But the boundary is fixed.</p>
 <p>Tier 2 is goal-directed self-evolution. We point the model at a specific hard problem—say, an unsolved conjecture in mathematics—and it doesn’t just attempt solutions. It explores intermediate lemmas, generates and tests new ideas, and updates its own weights based on what it discovers. The sphere expands, but only where we push it. This is not reinforcement learning in the conventional sense: the data and prompts are not predefined, only the goal is.</p>
 <p>Tier 3 is curiosity-driven self-evolution. The model identifies what it doesn’t know and decides, on its own, that this gap is worth filling. It doesn’t wait for us to define the problem. A professor once put it well: “Composing music like Bach isn’t intelligent. Wanting to compose music like Bach is intelligent.” Tier 3 is the wanting.</p>
 <p>Each tier is harder than the last—not just technically, but in terms of safety. A tier-2 system that solves the wrong problem wastes compute. A tier-3 system that pursues the wrong curiosity could be genuinely dangerous.</p>
-<h2>What It Would Take</h2>
-<p>Getting to tier 2 and beyond will require rethinking some of the foundations we currently take for granted. The way we train models today is essentially a one-shot process: learn once, deploy, freeze. Making learning continuous means solving the problem of catastrophic forgetting—how a model can keep acquiring new knowledge without destroying what it already knows. That likely demands new optimization methods that go beyond gradient descent, architectures that can grow in capacity as they learn, and new ways of defining loss over long horizons and open-ended goals. None of these are incremental improvements on existing techniques; they are open research problems that may require fundamentally different approaches.</p>
-<h2>The Alignment Problem Gets Harder</h2>
-<p>Every tier makes alignment more difficult. With a static model, alignment is already hard, but at least the thing you aligned stays aligned—the weights don’t change after deployment.</p>
-<p>With a tier-2 system, the model is modifying its own internals in pursuit of a goal you gave it. How do you verify that a system whose weights are continuously shifting still respects the constraints you set? Your alignment guarantees become time-dependent.</p>
-<p>With tier 3, it is worse. The model is choosing its own goals. Even if its curiosity is initially well-calibrated—even if it starts by pursuing questions beneficial to humanity—you need confidence that self-modification will not gradually erode the values that made it safe in the first place.</p>
-<p>This is not a reason to stop. It is a reason to proceed carefully, with verification methods that can keep pace with systems that change.</p>
+<h2>How To Get To The Next Generation</h2>
+<p>Tier-2 models require more than long context. Context gives a model temporary access to information. Weight updates compress experience into durable internal computation: new circuits, abstractions, heuristics, and priors.</p>
+<p>GPT-3 could not be created by placing GPT-3’s training data into GPT-2’s prompt. In the same way, a self-improving model must be able to absorb verified experience into its weights and architecture.</p>
+<p>Building such systems requires three core ingredients.</p>
+<p>The first is expandable capacity: the model should grow with novelty-weighted data, not just raw samples.</p>
+<p>The second is plasticity-aware optimization: the optimizer should decide where and how much the model should change without destroying old skills.</p>
+<p>The third is a closed data loop: the model generates tasks, attempts solutions, verifies results, stores discoveries, distills useful traces, and updates itself.</p>
+<p class="related-note"><strong>Technical note:</strong> I wrote a more detailed version of this argument in <a href="how_to_build_tier2_systems.html">How to Build Tier-2 Models</a>.</p>
+<p>In this view, Tier-2 AI is goal-preserving self-improvement. It turns experience into reusable internal machinery instead of merely carrying more history in context.</p>
 <h2>What This Could Look Like</h2>
 <p>If we manage to build even a reliable tier-2 system—and that alone would be a profound achievement—the implications are staggering. Point it at drug discovery, give it a year, and perhaps it returns with a therapy we would not have found in a decade. Point it at materials science and maybe it finds a room-temperature superconductor. These are not superintelligent systems. They are systems that can learn on the job, which is something no current model can truly do.</p>
 <p>We do not need to solve everything at once. We do not need tier 3 tomorrow. But we need to start building the hearth—the optimization methods, the architectural patterns, the alignment frameworks—that would let us safely light a fire that learns.</p>
