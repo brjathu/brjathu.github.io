@@ -298,6 +298,23 @@ span.highlight {
   padding: 15px 18px;
 }
 
+.autonomy-ladder {
+  background: #fbf8f2;
+  border: 1px solid #e4dbcf;
+  border-left: 4px solid #9a6338;
+  border-radius: 8px;
+  margin: 26px 0 14px;
+  padding: 16px 20px;
+}
+
+.blog-content .autonomy-ladder p {
+  margin: 0 0 10px;
+}
+
+.blog-content .autonomy-ladder p:last-child {
+  margin-bottom: 0;
+}
+
 .blog-content code,
 .math-block {
   background: #f1eee8;
