@@ -49,36 +49,36 @@
     <rect x="508" y="36" width="190" height="122" rx="8" fill="#f1eef6" stroke="#d8d0e3"></rect>
     <path d="M222 97 H253" stroke="#8a4b21" stroke-width="2.5" marker-end="url(#arrowhead)"></path>
     <path d="M465 97 H496" stroke="#8a4b21" stroke-width="2.5" marker-end="url(#arrowhead)"></path>
-    <text x="117" y="72" text-anchor="middle" class="figure-label">Tier 1</text>
+    <text x="117" y="72" text-anchor="middle" class="figure-label">Level 1</text>
     <text x="117" y="101" text-anchor="middle" class="figure-title">Static model</text>
     <text x="117" y="130" text-anchor="middle" class="figure-note">Answers, then stops</text>
-    <text x="360" y="72" text-anchor="middle" class="figure-label">Tier 2</text>
+    <text x="360" y="72" text-anchor="middle" class="figure-label">Level 2</text>
     <text x="360" y="101" text-anchor="middle" class="figure-title">Goal-directed</text>
     <text x="360" y="130" text-anchor="middle" class="figure-note">Learns toward a target</text>
-    <text x="603" y="72" text-anchor="middle" class="figure-label">Tier 3</text>
+    <text x="603" y="72" text-anchor="middle" class="figure-label">Level 3</text>
     <text x="603" y="101" text-anchor="middle" class="figure-title">Curiosity-driven</text>
     <text x="603" y="130" text-anchor="middle" class="figure-note">Chooses what to learn</text>
   </svg>
-  <figcaption>Each tier adds more autonomy. The technical challenge is useful learning; the safety challenge is keeping that learning bounded.</figcaption>
+  <figcaption>Each level adds more autonomy. The technical challenge is useful learning; the safety challenge is keeping that learning bounded.</figcaption>
 </figure>
-<h2>Three Tiers of AI</h2>
-<p>It helps to think about AI systems in three tiers, each separated by a qualitative leap.</p>
-<p>Tier 1 is what we have now: static models and agents with harnesses. Think of everything a model knows as a sphere. The sphere is large, and we can prompt the model to navigate anywhere within it. But the boundary is fixed.</p>
-<p>Tier 2 is goal-directed self-evolution. We point the model at a specific hard problem—say, an unsolved conjecture in mathematics—and it doesn’t just attempt solutions. It explores intermediate lemmas, generates and tests new ideas, and updates its own weights based on what it discovers. The sphere expands, but only where we push it. This is not reinforcement learning in the conventional sense: the data and prompts are not predefined, only the goal is.</p>
-<p>Tier 3 is curiosity-driven self-evolution. The model identifies what it doesn’t know and decides, on its own, that this gap is worth filling. It doesn’t wait for us to define the problem. A professor once put it well: “Composing music like Bach isn’t intelligent. Wanting to compose music like Bach is intelligent.” Tier 3 is the wanting.</p>
-<p>Each tier is harder than the last—not just technically, but in terms of safety. A tier-2 system that solves the wrong problem wastes compute. A tier-3 system that pursues the wrong curiosity could be genuinely dangerous.</p>
+<h2>Three Levels of AI</h2>
+<p>It helps to think about AI systems in three levels, each separated by a qualitative leap.</p>
+<p>Level 1 is what we have now: static models and agents with harnesses. Think of everything a model knows as a sphere. The sphere is large, and we can prompt the model to navigate anywhere within it. But the boundary is fixed.</p>
+<p>Level 2 is goal-directed self-evolution. We point the model at a specific hard problem—say, an unsolved conjecture in mathematics—and it doesn’t just attempt solutions. It explores intermediate lemmas, generates and tests new ideas, and updates its own weights based on what it discovers. The sphere expands, but only where we push it. This is not reinforcement learning in the conventional sense: the data and prompts are not predefined, only the goal is.</p>
+<p>Level 3 is curiosity-driven self-evolution. The model identifies what it doesn’t know and decides, on its own, that this gap is worth filling. It doesn’t wait for us to define the problem. A professor once put it well: “Composing music like Bach isn’t intelligent. Wanting to compose music like Bach is intelligent.” Level 3 is the wanting.</p>
+<p>Each level is harder than the last—not just technically, but in terms of safety. A level-2 system that solves the wrong problem wastes compute. A level-3 system that pursues the wrong curiosity could be genuinely dangerous.</p>
 <h2>How To Get To The Next Generation</h2>
-<p>Tier-2 models require more than long context. Context gives a model temporary access to information. Weight updates compress experience into durable internal computation: new circuits, abstractions, heuristics, and priors.</p>
+<p>Level-2 models require more than long context. Context gives a model temporary access to information. Weight updates compress experience into durable internal computation: new circuits, abstractions, heuristics, and priors.</p>
 <p>GPT-3 could not be created by placing GPT-3’s training data into GPT-2’s prompt. In the same way, a self-improving model must be able to absorb verified experience into its weights and architecture.</p>
 <p>Building such systems requires three core ingredients.</p>
 <p>The first is expandable capacity: the model should grow with novelty-weighted data, not just raw samples.</p>
 <p>The second is plasticity-aware optimization: the optimizer should decide where and how much the model should change without destroying old skills.</p>
 <p>The third is a closed data loop: the model generates tasks, attempts solutions, verifies results, stores discoveries, distills useful traces, and updates itself.</p>
-<p class="related-note"><strong>Technical note:</strong> I wrote a more detailed version of this argument in <a href="how_to_build_tier2_systems.html">How to Build Tier-2 Models</a>.</p>
-<p>In this view, Tier-2 AI is goal-preserving self-improvement. It turns experience into reusable internal machinery instead of merely carrying more history in context.</p>
+<p class="related-note"><strong>Technical note:</strong> I wrote a more detailed version of this argument in <a href="how_to_build_tier2_systems.html">How to Build Level-2 Models</a>.</p>
+<p>In this view, Level-2 AI is goal-preserving self-improvement. It turns experience into reusable internal machinery instead of merely carrying more history in context.</p>
 <h2>What This Could Look Like</h2>
-<p>If we manage to build even a reliable tier-2 system—and that alone would be a profound achievement—the implications are staggering. Point it at drug discovery, give it a year, and perhaps it returns with a therapy we would not have found in a decade. Point it at materials science and maybe it finds a room-temperature superconductor. These are not superintelligent systems. They are systems that can learn on the job, which is something no current model can truly do.</p>
-<p>We do not need to solve everything at once. We do not need tier 3 tomorrow. But we need to start building the hearth—the optimization methods, the architectural patterns, the alignment frameworks—that would let us safely light a fire that learns.</p>
+<p>If we manage to build even a reliable level-2 system—and that alone would be a profound achievement—the implications are staggering. Point it at drug discovery, give it a year, and perhaps it returns with a therapy we would not have found in a decade. Point it at materials science and maybe it finds a room-temperature superconductor. These are not superintelligent systems. They are systems that can learn on the job, which is something no current model can truly do.</p>
+<p>We do not need to solve everything at once. We do not need level 3 tomorrow. But we need to start building the hearth—the optimization methods, the architectural patterns, the alignment frameworks—that would let us safely light a fire that learns.</p>
       </div>
 
       <section class="more-posts">
