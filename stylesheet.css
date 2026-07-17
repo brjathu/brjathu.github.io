@@ -120,6 +120,15 @@ name {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
+.grok-imagine-thumbnail .two {
+  align-items: center;
+  display: flex;
+}
+
+.grok-imagine-thumbnail img {
+  display: block;
+}
+
 .fade {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
