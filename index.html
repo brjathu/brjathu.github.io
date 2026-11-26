@@ -45,6 +45,18 @@ how to delete old commits -->
 		  height: 100%;
 		  object-fit: cover;
 		}
+
+		.scaling-figure {
+		  display: block;
+		  width: 160px;
+		  max-width: 100%;
+		  aspect-ratio: 1 / 1;
+		  box-sizing: border-box;
+		  border: 1px solid #e5e5e5;
+		  background: white;
+		  object-fit: contain;
+		  margin-inline: auto;
+		}
 	  </style>
 
 	<link rel="stylesheet" type="text/css" href="stylesheet.css?v=home-20260716a">
@@ -179,13 +191,7 @@ how to delete old commits -->
 
 <tr onmouseout="lart_animation_stop()" onmouseover="lart_animation_start()"  >
 	<td style="padding:20px;width:25%;vertical-align:middle">
-		<div class="one">
-			<!-- </br></br> -->
-			<div class="two" id='www_image'>
-				<!-- <img src="images/toto.png" width="160"> -->
-				<img src="images/scaling.png" width="160">
-			</div>
-		</div>
+		<img class="scaling-figure" src="images/scaling.png" alt="Scaling results for autoregressive video pre-training">
 	</td>
 	<td style="padding:20px;width:75%;vertical-align:middle">
 		<a href="">
@@ -211,13 +217,7 @@ how to delete old commits -->
 
 <tr onmouseout="lart_animation_stop()" onmouseover="lart_animation_start()"  >
 	<td style="padding:20px;width:25%;vertical-align:middle">
-		<div class="one">
-			</br>
-			</br>
-			<div class="two" id='www_image'>
-				<img src="images/scaling_diff.png" width="160">
-			</div>
-		</div>
+		<img class="scaling-figure" src="images/scaling_diff.png" alt="Diffusion model scaling results for perceptual tasks">
 	</td>
 	<td style="padding:20px;width:75%;vertical-align:middle">
 		<a href="">
@@ -239,7 +239,7 @@ how to delete old commits -->
 
 <tr>
 	<td style="padding:20px;width:25%;vertical-align:middle">
-		<a href="images/perception_encoder.png"><img src="images/perception_encoder.png" width="160" style="display:block;max-width:100%;height:auto" alt="Perception Encoder scaling plot showing error versus training compute. Open full-size figure."></a>
+		<a href="images/perception_encoder.png"><img class="scaling-figure" src="images/perception_encoder.png" alt="Perception Encoder scaling plot showing error versus training compute. Open full-size figure."></a>
 	</td>
 	<td style="padding:20px;width:75%;vertical-align:middle">
 		<a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/57bc0a850255e2041341bf74c7e2b9fa-Abstract-Conference.html"><papertitle>Perception Encoder: The best visual embeddings are not at the output of the network</papertitle></a><br>
