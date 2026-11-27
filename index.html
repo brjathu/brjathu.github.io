@@ -151,6 +151,9 @@ how to delete old commits -->
 			<tr>
 			<td style="padding:20px;width:100%;vertical-align:middle">
 				<heading>Research</heading>
+				<label id="preview-motion-control" hidden style="margin-left:12px">
+					<input type="checkbox" id="preview-motion"> Animate previews
+				</label>
 				<p>
 				My research interests lie in the general area of computer vision and deep learning, 
 				particularly in learning from videos, deep neural architectures and continual learning. 
@@ -614,6 +617,27 @@ how to delete old commits -->
       </td>
     </tr>
   </table>
+  <script>
+    const localPreview = location.protocol === 'file:' ||
+      ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+    if (localPreview) {
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: no-preference)');
+      const motionToggle = document.getElementById('preview-motion');
+      const previewSources = document.querySelectorAll('picture source[media="(prefers-reduced-motion: no-preference)"]');
+
+      function followMotionPreference() {
+        motionToggle.checked = motionPreference.matches;
+        for (const source of previewSources) source.media = motionPreference.media;
+      }
+
+      followMotionPreference();
+      motionPreference.addEventListener('change', followMotionPreference);
+      motionToggle.addEventListener('change', () => {
+        for (const source of previewSources) source.media = motionToggle.checked ? 'all' : 'not all';
+      });
+      document.getElementById('preview-motion-control').hidden = false;
+    }
+  </script>
 </body>
 
 </html>
